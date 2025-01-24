@@ -33,21 +33,28 @@ offset_right = -58.0
 offset_bottom = -44.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/separation = 50
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="ButtonStart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonQuit")
 text = "Start"
 
 [node name="ButtonOptions" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Options"
 
+[node name="ButtonCredits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
 [node name="ButtonQuit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../ButtonStart")
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
