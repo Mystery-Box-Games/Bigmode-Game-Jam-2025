@@ -11,9 +11,8 @@ func _physics_process(delta: float) -> void:
 	
 	# get direction from keyboard
 	var character_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	#character_direction.x = Input.get_axis("move_left", "move_right")
-	#character_direction.y = Input.get_axis("move_up", "move_down")
 	
+	# move character in specified direction
 	if character_direction:
 		velocity = character_direction.normalized() * (SPEED * 100)
 	else:

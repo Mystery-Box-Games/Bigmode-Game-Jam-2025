@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://8u6h17vjdshi"]
+
+[ext_resource type="Texture2D" uid="uid://dpg36piyajejm" path="res://assets/sprites/cursors/crosshair.png" id="1_4ai22"]
+[ext_resource type="Script" path="res://scripts/cursor_manager.gd" id="1_qbr8b"]
+[ext_resource type="Texture2D" uid="uid://cnx5wooyt2sm3" path="res://assets/sprites/cursors/empty_cursor.png" id="2_fk6au"]
+
+[node name="CursorManager" type="CanvasLayer"]
+scale = Vector2(0.15625, 0.15625)
+transform = Transform2D(0.15625, 0, 0, 0.15625, 0, 0)
+script = ExtResource("1_qbr8b")
+empty_cursor = ExtResource("2_fk6au")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4ai22")
