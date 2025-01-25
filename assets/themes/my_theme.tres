@@ -3,6 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://2w57jgpvncme" path="res://assets/themes/panels/panel_container_main.tres" id="1_0ptyo"]
 
 [resource]
+ButtonMain/base_type = &"Button"
 MenuTitle/base_type = &"Label"
 MenuTitle/font_sizes/font_size = 70
 PanelContainer/styles/panel = ExtResource("1_0ptyo")

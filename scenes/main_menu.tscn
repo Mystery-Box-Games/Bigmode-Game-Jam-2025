@@ -41,19 +41,23 @@ alignment = 1
 [node name="ButtonStart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../ButtonQuit")
+theme_type_variation = &"ButtonMain"
 text = "Start"
 
 [node name="ButtonOptions" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"ButtonMain"
 text = "Options"
 
 [node name="ButtonCredits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"ButtonMain"
 text = "Credits"
 
 [node name="ButtonQuit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../ButtonStart")
+theme_type_variation = &"ButtonMain"
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]

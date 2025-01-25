@@ -8,8 +8,7 @@ func _ready() -> void:
 
 
 func _on_button_start_pressed() -> void:
-	# get_tree().change_scene_to_file("PATH TO FIRST SCENE")
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func _on_button_options_pressed() -> void:
