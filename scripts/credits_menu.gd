@@ -4,7 +4,8 @@ const section_time := 2.0
 const line_time := 0.3
 const base_speed := 100
 const speed_up_multiplier := 10.0
-const title_color := Color.BLUE_VIOLET
+const title_color := Color.CADET_BLUE
+const title_size := 25
 
 #var scroll_speed := base_speed
 var speed_up = false
@@ -105,6 +106,7 @@ func add_line():
 	if curr_line == 0:
 		#new_line.add_color_override("font_color", title_color)
 		new_line.set("theme_override_colors/font_color", title_color)
+		new_line.set("theme_override_font_sizes/font_size", title_size)
 	$CreditsContainer.add_child(new_line)
 	
 	if section.size() > 0:
