@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://odxvlb3cuew4"]
+
+[ext_resource type="StyleBox" uid="uid://2w57jgpvncme" path="res://assets/themes/panels/panel_container_main.tres" id="1_0ptyo"]
+
+[resource]
+MenuTitle/base_type = &"Label"
+MenuTitle/font_sizes/font_size = 70
+PanelContainer/styles/panel = ExtResource("1_0ptyo")
