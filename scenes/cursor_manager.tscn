@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cnx5wooyt2sm3" path="res://assets/sprites/cursors/empty_cursor.png" id="2_fk6au"]
 
 [node name="CursorManager" type="CanvasLayer"]
+layer = 10
 scale = Vector2(0.15625, 0.15625)
 transform = Transform2D(0.15625, 0, 0, 0.15625, 0, 0)
 script = ExtResource("1_qbr8b")

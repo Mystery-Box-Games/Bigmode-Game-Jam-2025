@@ -8,4 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	
+	# display quit menu when ESC is pressed
+	if (Input.is_action_pressed("ui_cancel")):
+		$"../QuitMenu".visible = true

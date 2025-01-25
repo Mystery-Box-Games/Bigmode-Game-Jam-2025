@@ -4,6 +4,7 @@
 
 [resource]
 ButtonMain/base_type = &"Button"
+ButtonMain/font_sizes/font_size = 24
 MenuTitle/base_type = &"Label"
 MenuTitle/font_sizes/font_size = 70
 PanelContainer/styles/panel = ExtResource("1_0ptyo")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://clgxdcp0tentf"]
+
+[ext_resource type="Script" path="res://scripts/quit_menu.gd" id="1_o20yf"]
+
+[node name="QuitMenu" type="CanvasLayer"]
+layer = 9
+script = ExtResource("1_o20yf")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="ButtonResume" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonQuit")
+text = "Resume"
+
+[node name="ButtonRetry" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="ButtonOptions" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="ButtonQuit" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../ButtonResume")
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/ButtonRetry" to="." method="_on_button_retry_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
