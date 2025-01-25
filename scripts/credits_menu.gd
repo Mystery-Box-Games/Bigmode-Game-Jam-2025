@@ -103,10 +103,16 @@ func add_line():
 	var new_line = line.duplicate()
 	new_line.text = section.pop_front()
 	lines.append(new_line)
+	
+	# Set the theme, etc, for the title line
 	if curr_line == 0:
-		#new_line.add_color_override("font_color", title_color)
 		new_line.set("theme_override_colors/font_color", title_color)
 		new_line.set("theme_override_font_sizes/font_size", title_size)
+		
+	# Set the theme, etc, for subtitle line
+	#elif curr_line > 0:
+		#new_line.set("theme_override_colors/font_color", title_color)
+		#new_line.set("theme_override_font_sizes/font_size", title_size)
 	$CreditsContainer.add_child(new_line)
 	
 	if section.size() > 0:
