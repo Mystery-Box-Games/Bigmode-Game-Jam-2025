@@ -20,16 +20,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_73p22"]
-radius = 126.151
+radius = 33.3766
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2jlu"]
-radius = 157.385
+radius = 52.7731
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_0subd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -14)
+scale = Vector2(0.3125, 0.3125)
 sprite_frames = SubResource("SpriteFrames_kk6k6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -41,4 +42,4 @@ shape = SubResource("CircleShape2D_73p22")
 shape = SubResource("CircleShape2D_p2jlu")
 
 [node name="Shotgun" parent="." instance=ExtResource("3_4oqd4")]
-position = Vector2(82, -2)
+position = Vector2(23, -3)
