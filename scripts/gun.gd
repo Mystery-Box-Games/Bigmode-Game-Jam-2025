@@ -1,5 +1,8 @@
 extends Node2D
 
+# Watch to learn how this script works
+# https://www.youtube.com/watch?v=MFaMVsYrLrc
+
 @export var bullet_scn: PackedScene
 @export var bullet_speed: float = 1200.0
 @export var bps: float = 5.0
