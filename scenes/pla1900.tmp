@@ -41,4 +41,3 @@ shape = SubResource("CircleShape2D_73p22")
 shape = SubResource("CircleShape2D_p2jlu")
 
 [node name="Shotgun" parent="." instance=ExtResource("3_4oqd4")]
-position = Vector2(82, -2)

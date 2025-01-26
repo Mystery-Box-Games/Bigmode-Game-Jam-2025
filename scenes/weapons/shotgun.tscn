@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc2pve07aanak"]
+
+[ext_resource type="Script" path="res://scripts/gun.gd" id="1_qsreu"]
+[ext_resource type="Texture2D" uid="uid://fdnyoxy40rm1" path="res://assets/sprites/weapons/shotgun/shotgun_temp.png" id="1_ssjfy"]
+[ext_resource type="PackedScene" uid="uid://nn1pg4nm6ct0" path="res://scenes/weapons/bullet.tscn" id="2_meypq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhkg8"]
+
+[node name="Shotgun" type="Node2D"]
+script = ExtResource("1_qsreu")
+bullet_scn = ExtResource("2_meypq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_yhkg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(93, 18)
+texture = ExtResource("1_ssjfy")
+
+[node name="BulletPosition" type="Node2D" parent="."]
+position = Vector2(322, -7)
