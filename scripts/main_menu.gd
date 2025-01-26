@@ -4,7 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$VBoxContainer/ButtonStart.grab_focus()
-
+	Globals.prevscene = get_tree().current_scene.scene_file_path
 
 
 func _on_button_start_pressed() -> void:

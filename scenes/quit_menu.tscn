@@ -30,6 +30,7 @@ layout_mode = 2
 text = "Restart"
 
 [node name="ButtonOptions" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Options"
 
@@ -40,4 +41,5 @@ text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/ButtonRetry" to="." method="_on_button_retry_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
