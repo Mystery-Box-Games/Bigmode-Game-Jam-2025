@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_qsreu"]
 [ext_resource type="PackedScene" uid="uid://nn1pg4nm6ct0" path="res://scenes/weapons/bullet.tscn" id="2_meypq"]
-[ext_resource type="Texture2D" uid="uid://brbxnsn8w8rso" path="res://assets/sprites/weapons/rifle/Rifle.png" id="3_peswx"]
+[ext_resource type="Texture2D" uid="uid://cxmebww3c02a5" path="res://assets/sprites/weapons/shotgun/Shotgun.png" id="3_l3u2v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yhkg8"]
 
@@ -18,8 +18,8 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_yhkg8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(11, -1)
-texture = ExtResource("3_peswx")
+position = Vector2(13, -1)
+texture = ExtResource("3_l3u2v")
 
 [node name="BulletPosition" type="Node2D" parent="."]
-position = Vector2(38, -5.5)
+position = Vector2(40, -3.5)
