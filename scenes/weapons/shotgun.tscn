@@ -9,7 +9,9 @@
 [node name="Shotgun" type="Node2D"]
 script = ExtResource("1_qsreu")
 bullet_scn = ExtResource("2_meypq")
-bps = 1.0
+bullet_speed = 1500.0
+bps = 2.0
+bullet_damage = 35.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false

@@ -14,13 +14,16 @@ script = ExtResource("1_5u2g6")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 84.0
-offset_right = 554.0
-offset_bottom = 160.0
+offset_left = 224.0
+offset_top = 89.0
+offset_right = 731.0
+offset_bottom = 383.0
 theme = ExtResource("2_a638c")
 theme_type_variation = &"MenuTitle"
-text = "Zombie Game"
+text = "Killing Humans
+for
+Zommies"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
