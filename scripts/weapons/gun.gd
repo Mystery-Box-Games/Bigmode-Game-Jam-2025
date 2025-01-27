@@ -26,7 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	
-	if (Input.is_action_just_pressed("click") && time_until_fire > fire_rate):
+	if ((Input.is_action_just_pressed("click") || Input.is_action_pressed("click")) && time_until_fire > fire_rate):
 		var bullet: RigidBody2D = bullet_scn.instantiate()
 		
 		bullet.rotation = global_rotation

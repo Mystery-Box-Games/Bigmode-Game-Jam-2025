@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://4c2666r77n6l"]
+
+[ext_resource type="Script" path="res://scripts/pickups/pickup.gd" id="1_ctmro"]
+[ext_resource type="PackedScene" uid="uid://cc2pve07aanak" path="res://scenes/weapons/shotgun.tscn" id="2_63uc0"]
+[ext_resource type="Texture2D" uid="uid://brbxnsn8w8rso" path="res://assets/sprites/weapons/rifle/Rifle.png" id="3_j38xd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4kos"]
+height = 72.0
+
+[node name="PickupShotgun" type="Node2D"]
+script = ExtResource("1_ctmro")
+pickup_scene = ExtResource("2_63uc0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_j38xd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_b4kos")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dttssb23objsd"]
+
+[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_gtsaf"]
+[ext_resource type="PackedScene" uid="uid://nn1pg4nm6ct0" path="res://scenes/weapons/bullet.tscn" id="2_wt25t"]
+[ext_resource type="Texture2D" uid="uid://brbxnsn8w8rso" path="res://assets/sprites/weapons/rifle/Rifle.png" id="3_rt4x0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhkg8"]
+
+[node name="MachineGun" type="Node2D"]
+script = ExtResource("1_gtsaf")
+bullet_scn = ExtResource("2_wt25t")
+bps = 50.0
+bullet_damage = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_yhkg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -1)
+texture = ExtResource("3_rt4x0")
+
+[node name="BulletPosition" type="Node2D" parent="."]
+position = Vector2(38, -5.5)

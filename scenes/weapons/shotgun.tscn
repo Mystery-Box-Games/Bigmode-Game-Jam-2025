@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cc2pve07aanak"]
 
-[ext_resource type="Script" path="res://scripts/gun.gd" id="1_qsreu"]
+[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_qsreu"]
 [ext_resource type="PackedScene" uid="uid://nn1pg4nm6ct0" path="res://scenes/weapons/bullet.tscn" id="2_meypq"]
 [ext_resource type="Texture2D" uid="uid://brbxnsn8w8rso" path="res://assets/sprites/weapons/rifle/Rifle.png" id="3_peswx"]
 

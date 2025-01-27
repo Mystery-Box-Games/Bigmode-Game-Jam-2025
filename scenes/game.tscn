@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8wifcawcc8n4"]
+[gd_scene load_steps=7 format=3 uid="uid://c8wifcawcc8n4"]
 
 [ext_resource type="PackedScene" uid="uid://crk70wqlbm3xp" path="res://scenes/player.tscn" id="1_iu3ed"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wom1f"]
 [ext_resource type="PackedScene" uid="uid://clgxdcp0tentf" path="res://scenes/quit_menu.tscn" id="3_hkqpe"]
+[ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="4_p7i0v"]
+[ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="5_qbudv"]
+[ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="6_70lff"]
 
 [node name="Game" type="Node2D"]
 
@@ -18,3 +21,12 @@ process_callback = 0
 
 [node name="QuitMenu" parent="." instance=ExtResource("3_hkqpe")]
 visible = false
+
+[node name="PickupMachineGun" parent="." instance=ExtResource("4_p7i0v")]
+position = Vector2(322, 117)
+
+[node name="PickupRifle" parent="." instance=ExtResource("5_qbudv")]
+position = Vector2(516, 159)
+
+[node name="PickupShotgun" parent="." instance=ExtResource("6_70lff")]
+position = Vector2(702, 117)

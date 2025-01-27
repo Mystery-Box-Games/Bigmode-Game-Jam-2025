@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://crk70wqlbm3xp"]
+[gd_scene load_steps=7 format=3 uid="uid://crk70wqlbm3xp"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0subd"]
 [ext_resource type="Texture2D" uid="uid://8noud0s2gjrw" path="res://assets/sprites/player/player_temp.png" id="2_wt2n4"]
-[ext_resource type="PackedScene" uid="uid://cc2pve07aanak" path="res://scenes/weapons/shotgun.tscn" id="3_4oqd4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7fnuj"]
 atlas = ExtResource("2_wt2n4")
@@ -41,5 +40,5 @@ shape = SubResource("CircleShape2D_73p22")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtzone"]
 shape = SubResource("CircleShape2D_p2jlu")
 
-[node name="Shotgun" parent="." instance=ExtResource("3_4oqd4")]
-position = Vector2(23, -3)
+[node name="WeaponSocket" type="Node2D" parent="."]
+position = Vector2(17, 0)
