@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		time_until_attack -= delta
 		
 func attack():
-	print("attack player")
+	player.get_node("Health").damage(attack_damage)
 
 func _on_attack_range_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -27,4 +27,4 @@ func _on_attack_range_body_exited(body: Node2D) -> void:
 	if body is Player:
 		print("player out of range")
 		within_attack_range = false
-		time_until_attack =attack_speed
+		time_until_attack = attack_speed
