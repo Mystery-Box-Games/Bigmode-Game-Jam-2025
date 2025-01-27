@@ -18,7 +18,7 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_yhkg8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8, -1)
+position = Vector2(11, -1)
 texture = ExtResource("3_rt4x0")
 
 [node name="BulletPosition" type="Node2D" parent="."]
