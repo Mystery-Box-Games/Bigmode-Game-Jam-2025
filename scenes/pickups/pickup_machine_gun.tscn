@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ce4iem8eqbug"]
 
 [ext_resource type="Script" path="res://scripts/pickups/pickup.gd" id="1_ah44e"]
-[ext_resource type="Texture2D" uid="uid://brbxnsn8w8rso" path="res://assets/sprites/weapons/rifle/Rifle.png" id="2_i3pnu"]
 [ext_resource type="PackedScene" uid="uid://dttssb23objsd" path="res://scenes/weapons/machine_gun.tscn" id="2_w5dhj"]
+[ext_resource type="Texture2D" uid="uid://5ywot2rom77j" path="res://assets/sprites/weapons/assault rifle/AssaultRifle.png" id="3_wwle5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4kos"]
 height = 72.0
@@ -20,7 +20,7 @@ text = "Machine Gun"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_i3pnu")
+texture = ExtResource("3_wwle5")
 
 [node name="Area2D" type="Area2D" parent="."]
 
