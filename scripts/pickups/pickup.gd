@@ -3,7 +3,7 @@ extends Node
 @export var pickup_scene: PackedScene
 @export var is_weapon: bool = false
 
-@onready var player: Player = $'../Player'
+@onready var player: Player = get_tree().root.get_node("Game").get_node("Player")
 
 
 # Called when the node enters the scene tree for the first time.

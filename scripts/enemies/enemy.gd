@@ -14,7 +14,7 @@ var attack_speed: float
 var time_until_attack: float
 var within_attack_range: bool = false
 
-@onready var player: Player = $'../Player'
+@onready var player: Player = get_tree().root.get_node("Game").get_node("Player")
 
 func initialize():
 	attack_speed = 1 / aps;

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="4_p7i0v"]
 [ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="5_qbudv"]
 [ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="6_70lff"]
-[ext_resource type="PackedScene" uid="uid://ni53i0m41lv0" path="res://scenes/enemies/enemy_runner.tscn" id="7_mahfj"]
+[ext_resource type="PackedScene" uid="uid://1ymd5fq0pt10" path="res://scenes/enemies/runner_spawner.tscn" id="7_0rhs5"]
 
 [node name="Game" type="Node2D"]
 
@@ -24,13 +24,30 @@ position_smoothing_enabled = true
 [node name="QuitMenu" parent="." instance=ExtResource("3_hkqpe")]
 visible = false
 
-[node name="PickupMachineGun" parent="." instance=ExtResource("4_p7i0v")]
+[node name="Pickups" type="Node" parent="."]
+
+[node name="PickupMachineGun" parent="Pickups" instance=ExtResource("4_p7i0v")]
 position = Vector2(322, 117)
 
-[node name="PickupRifle" parent="." instance=ExtResource("5_qbudv")]
+[node name="PickupRifle" parent="Pickups" instance=ExtResource("5_qbudv")]
 position = Vector2(516, 159)
 
-[node name="PickupShotgun" parent="." instance=ExtResource("6_70lff")]
+[node name="PickupShotgun" parent="Pickups" instance=ExtResource("6_70lff")]
 position = Vector2(702, 117)
 
-[node name="EnemyRunner" parent="." instance=ExtResource("7_mahfj")]
+[node name="Spawners" type="Node" parent="."]
+
+[node name="RunnerSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("7_0rhs5")]
+spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4")]
+
+[node name="SpawnPoint" type="Node2D" parent="Spawners/RunnerSpawner"]
+position = Vector2(64, 67)
+
+[node name="SpawnPoint2" type="Node2D" parent="Spawners/RunnerSpawner"]
+position = Vector2(50, 554)
+
+[node name="SpawnPoint3" type="Node2D" parent="Spawners/RunnerSpawner"]
+position = Vector2(944, 59)
+
+[node name="SpawnPoint4" type="Node2D" parent="Spawners/RunnerSpawner"]
+position = Vector2(966, 547)

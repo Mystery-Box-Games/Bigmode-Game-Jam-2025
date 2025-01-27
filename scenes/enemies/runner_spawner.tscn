@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://1ymd5fq0pt10"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_spawner.gd" id="1_sg7ko"]
+[ext_resource type="PackedScene" uid="uid://ni53i0m41lv0" path="res://scenes/enemies/enemy_runner.tscn" id="2_utdbd"]
+
+[node name="RunnerSpawner" type="Node2D"]
+script = ExtResource("1_sg7ko")
+enemy_scene = ExtResource("2_utdbd")
