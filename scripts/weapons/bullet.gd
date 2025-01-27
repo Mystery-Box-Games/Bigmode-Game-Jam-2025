@@ -1,6 +1,9 @@
 extends Node2D
 
 const SPEED = 40
+
+var damage
+
 @onready var timer: Timer = $Timer
 
 
@@ -16,3 +19,8 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+func _on_body_entered(body: Node) -> void:
+	if body is Enemy:
+		body.get_node("Health").damage(damage)
+		queue_free()

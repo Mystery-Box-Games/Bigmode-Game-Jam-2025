@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8wifcawcc8n4"]
+[gd_scene load_steps=8 format=3 uid="uid://c8wifcawcc8n4"]
 
 [ext_resource type="PackedScene" uid="uid://crk70wqlbm3xp" path="res://scenes/player.tscn" id="1_iu3ed"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wom1f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="4_p7i0v"]
 [ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="5_qbudv"]
 [ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="6_70lff"]
+[ext_resource type="PackedScene" uid="uid://ni53i0m41lv0" path="res://scenes/enemies/enemy_runner.tscn" id="7_mahfj"]
 
 [node name="Game" type="Node2D"]
 
@@ -15,9 +16,10 @@ script = ExtResource("1_wom1f")
 [node name="Player" parent="." instance=ExtResource("1_iu3ed")]
 position = Vector2(515, 296)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(510, 313)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-5, 17)
 process_callback = 0
+position_smoothing_enabled = true
 
 [node name="QuitMenu" parent="." instance=ExtResource("3_hkqpe")]
 visible = false
@@ -30,3 +32,5 @@ position = Vector2(516, 159)
 
 [node name="PickupShotgun" parent="." instance=ExtResource("6_70lff")]
 position = Vector2(702, 117)
+
+[node name="EnemyRunner" parent="." instance=ExtResource("7_mahfj")]

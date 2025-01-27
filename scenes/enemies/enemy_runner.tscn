@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ni53i0m41lv0"]
+
+[ext_resource type="Texture2D" uid="uid://b6f6712d7t0cf" path="res://assets/sprites/enemies/enemy_temp.png" id="1_lblv0"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_runner.gd" id="1_oa4ih"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="2_wivg0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4cqr"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wrfnf"]
+radius = 42.0
+
+[node name="EnemyRunner" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_oa4ih")
+speed = 1.0
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_wivg0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11, 0)
+rotation = 1.5708
+scale = Vector2(0.273438, 0.273438)
+texture = ExtResource("1_lblv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b4cqr")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_wrfnf")
+
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]

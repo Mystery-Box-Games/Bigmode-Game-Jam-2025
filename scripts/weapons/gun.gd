@@ -56,6 +56,9 @@ func _process(delta: float) -> void:
 			bullet3.add_collision_exception_with(bullet1)
 			bullet3.add_collision_exception_with(bullet2)
 			
+			bullet1.damage = bullet_damage
+			bullet2.damage = bullet_damage
+			bullet3.damage = bullet_damage
 			
 			get_tree().root.add_child(bullet1)
 			get_tree().root.add_child(bullet2)
@@ -68,6 +71,8 @@ func _process(delta: float) -> void:
 			bullet.rotation = global_rotation
 			bullet.global_position = $BulletPosition.global_position
 			bullet.linear_velocity = bullet.transform.x * bullet_speed
+			
+			bullet.damage = bullet_damage
 			
 			get_tree().root.add_child(bullet)
 		

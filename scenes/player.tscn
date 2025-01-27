@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://crk70wqlbm3xp"]
+[gd_scene load_steps=8 format=3 uid="uid://crk70wqlbm3xp"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0subd"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="2_iy13f"]
 [ext_resource type="Texture2D" uid="uid://8noud0s2gjrw" path="res://assets/sprites/player/player_temp.png" id="2_wt2n4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7fnuj"]
@@ -26,6 +27,9 @@ radius = 52.7731
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_0subd")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_iy13f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
