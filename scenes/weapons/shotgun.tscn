@@ -12,6 +12,7 @@ bullet_scn = ExtResource("2_meypq")
 bullet_speed = 1500.0
 bps = 2.0
 bullet_damage = 35.0
+is_shotgun = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
