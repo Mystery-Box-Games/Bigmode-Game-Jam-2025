@@ -17,5 +17,12 @@ func _physics_process(delta: float) -> void:
 		velocity = character_direction.normalized() * (SPEED * 100)
 	else:
 		velocity = Vector2.ZERO
-
+		
+	if character_direction == Vector2(-1, 0):
+		$AnimatedSprite2D.flip_h = true
+		weapon_socket.position.x = -9
+	elif character_direction == Vector2(1, 0):
+		$AnimatedSprite2D.flip_h = false
+		weapon_socket.position.x = 9
+		
 	move_and_slide()

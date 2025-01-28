@@ -40,22 +40,28 @@ position = Vector2(702, 117)
 [node name="Spawners" type="Node" parent="."]
 
 [node name="RunnerSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("7_0rhs5")]
+visible = false
 spawn_points = [NodePath("SpawnPoint")]
 eps = 0.1
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/RunnerSpawner"]
+visible = false
 position = Vector2(64, 67)
 
 [node name="ShooterSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("8_exg0s")]
+visible = false
 spawn_points = [NodePath("SpawnPoint")]
 eps = 0.1
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/ShooterSpawner"]
+visible = false
 position = Vector2(932, 72)
 
 [node name="BruteSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("9_y2bcc")]
+visible = false
 spawn_points = [NodePath("SpawnPoint")]
 eps = 0.1
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/BruteSpawner"]
+visible = false
 position = Vector2(515, 585)

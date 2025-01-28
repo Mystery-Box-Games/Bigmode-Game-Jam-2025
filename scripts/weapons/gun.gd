@@ -7,12 +7,15 @@ extends Node2D
 @export var bullet_speed: float = 1200.0
 @export var bps: float = 5.0
 @export var bullet_damage: float = 30.0
-
 @export var is_shotgun: bool = false
 
 var fire_rate: float
-
 var time_until_fire: float = 0.0
+var flipped: bool = false
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: Sprite2D = $Sprite2D
+
 
 func _get_configuration_warnings():
 	if not bullet_scn:
@@ -26,7 +29,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	look_at(get_global_mouse_position())
+	var mouse_position = get_global_mouse_position()
+	
+	look_at(mouse_position)
+	
+	if (mouse_position.x < global_position.x && !flipped):
+		sprite.flip_v = true
+		$BulletPosition.position.y *= -1
+		flipped = true
+	elif (mouse_position.x > global_position.x && flipped):
+		sprite.flip_v = false
+		$BulletPosition.position.y *= -1
+		flipped = false
 	
 	if ((Input.is_action_just_pressed("click") || Input.is_action_pressed("click")) && time_until_fire > fire_rate):
 		
