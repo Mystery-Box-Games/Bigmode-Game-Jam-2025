@@ -19,7 +19,6 @@ sprite_frames = SubResource("SpriteFrames_yhkg8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, -1)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_mb6ob")
 
 [node name="BulletPosition" type="Node2D" parent="."]
