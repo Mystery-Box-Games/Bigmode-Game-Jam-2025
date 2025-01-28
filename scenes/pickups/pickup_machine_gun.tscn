@@ -1,8 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce4iem8eqbug"]
+[gd_scene load_steps=11 format=3 uid="uid://ce4iem8eqbug"]
 
 [ext_resource type="Script" path="res://scripts/pickups/pickup.gd" id="1_ah44e"]
 [ext_resource type="PackedScene" uid="uid://dttssb23objsd" path="res://scenes/weapons/machine_gun.tscn" id="2_w5dhj"]
+[ext_resource type="Texture2D" uid="uid://dwi0sj5igx7xl" path="res://assets/sprites/weapons/assault rifle/AssaultRiflePickup-Sheet.png" id="3_bfne7"]
 [ext_resource type="Texture2D" uid="uid://5ywot2rom77j" path="res://assets/sprites/weapons/assault rifle/AssaultRifle.png" id="3_wwle5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nonra"]
+atlas = ExtResource("3_bfne7")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymnhf"]
+atlas = ExtResource("3_bfne7")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na5yt"]
+atlas = ExtResource("3_bfne7")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqnxg"]
+atlas = ExtResource("3_bfne7")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ye1fs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nonra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymnhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na5yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqnxg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4kos"]
 radius = 13.0
@@ -13,6 +50,7 @@ script = ExtResource("1_ah44e")
 pickup_scene = ExtResource("2_w5dhj")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -51.0
 offset_top = 11.0
 offset_right = 52.0
@@ -20,7 +58,15 @@ offset_bottom = 34.0
 text = "Machine Gun"
 metadata/_edit_use_anchors_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_ye1fs")
+autoplay = "default"
+frame = 1
+frame_progress = 0.59315
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_wwle5")
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -1,8 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://vo7ovdvcox1m"]
+[gd_scene load_steps=15 format=3 uid="uid://vo7ovdvcox1m"]
 
 [ext_resource type="Script" path="res://scripts/pickups/pickup.gd" id="1_n1wm3"]
 [ext_resource type="PackedScene" uid="uid://cguu1m7e8lbbj" path="res://scenes/weapons/rifle.tscn" id="2_h13px"]
+[ext_resource type="Texture2D" uid="uid://dgli7fhneev56" path="res://assets/sprites/weapons/rifle/RiflePickup-Sheet.png" id="3_8ry0k"]
 [ext_resource type="Texture2D" uid="uid://brbxnsn8w8rso" path="res://assets/sprites/weapons/rifle/Rifle.png" id="3_8vgge"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3gb2"]
+atlas = ExtResource("3_8ry0k")
+region = Rect2(0, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qfhb"]
+atlas = ExtResource("3_8ry0k")
+region = Rect2(96, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a2tu"]
+atlas = ExtResource("3_8ry0k")
+region = Rect2(192, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6syh"]
+atlas = ExtResource("3_8ry0k")
+region = Rect2(288, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy6m7"]
+atlas = ExtResource("3_8ry0k")
+region = Rect2(384, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emv1u"]
+atlas = ExtResource("3_8ry0k")
+region = Rect2(480, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyf1x"]
+atlas = ExtResource("3_8ry0k")
+region = Rect2(576, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbl6k"]
+atlas = ExtResource("3_8ry0k")
+region = Rect2(672, 0, 96, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b61y5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3gb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qfhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a2tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6syh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy6m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emv1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyf1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbl6k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4kos"]
 radius = 12.0
@@ -13,6 +78,7 @@ script = ExtResource("1_n1wm3")
 pickup_scene = ExtResource("2_h13px")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = 11.0
 offset_right = 20.0
@@ -20,7 +86,15 @@ offset_bottom = 34.0
 text = "Rifle"
 metadata/_edit_use_anchors_ = true
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_b61y5")
+autoplay = "default"
+frame = 3
+frame_progress = 0.499488
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_8vgge")
 
 [node name="Area2D" type="Area2D" parent="."]
