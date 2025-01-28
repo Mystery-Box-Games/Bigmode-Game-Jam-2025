@@ -43,53 +43,55 @@ func _process(delta: float) -> void:
 		flipped = false
 	
 	if ((Input.is_action_just_pressed("click") || Input.is_action_pressed("click")) && time_until_fire > fire_rate):
-		
-		if (is_shotgun):
-			var bullet1: RigidBody2D = bullet_scn.instantiate()
-			var bullet2: RigidBody2D = bullet_scn.instantiate()
-			var bullet3: RigidBody2D = bullet_scn.instantiate()
-			
-			bullet1.rotation = global_rotation
-			bullet1.global_position = $BulletPosition.global_position
-			bullet1.linear_velocity = bullet1.transform.x * bullet_speed
-			
-			bullet2.rotation = global_rotation + .2
-			bullet2.global_position = $BulletPosition.global_position
-			bullet2.linear_velocity = bullet2.transform.x * bullet_speed
-			
-			bullet3.rotation = global_rotation - .2
-			bullet3.global_position = $BulletPosition.global_position
-			bullet3.linear_velocity = bullet3.transform.x * bullet_speed
-			
-			bullet1.add_collision_exception_with(bullet2)
-			bullet1.add_collision_exception_with(bullet3)
-			
-			bullet2.add_collision_exception_with(bullet1)
-			bullet2.add_collision_exception_with(bullet3)
-			
-			bullet3.add_collision_exception_with(bullet1)
-			bullet3.add_collision_exception_with(bullet2)
-			
-			bullet1.damage = bullet_damage
-			bullet2.damage = bullet_damage
-			bullet3.damage = bullet_damage
-			
-			get_tree().root.add_child(bullet1)
-			get_tree().root.add_child(bullet2)
-			get_tree().root.add_child(bullet3)
-		
-			time_until_fire = 0
-		else:
-			var bullet: RigidBody2D = bullet_scn.instantiate()
-			
-			bullet.rotation = global_rotation
-			bullet.global_position = $BulletPosition.global_position
-			bullet.linear_velocity = bullet.transform.x * bullet_speed
-			
-			bullet.damage = bullet_damage
-			
-			get_tree().root.add_child(bullet)
-		
-			time_until_fire = 0
+		fire()
 	else:
 		time_until_fire += delta
+
+func fire():
+	if (is_shotgun):
+		var bullet1: RigidBody2D = bullet_scn.instantiate()
+		var bullet2: RigidBody2D = bullet_scn.instantiate()
+		var bullet3: RigidBody2D = bullet_scn.instantiate()
+			
+		bullet1.rotation = global_rotation
+		bullet1.global_position = $BulletPosition.global_position
+		bullet1.linear_velocity = bullet1.transform.x * bullet_speed
+			
+		bullet2.rotation = global_rotation + .2
+		bullet2.global_position = $BulletPosition.global_position
+		bullet2.linear_velocity = bullet2.transform.x * bullet_speed
+			
+		bullet3.rotation = global_rotation - .2
+		bullet3.global_position = $BulletPosition.global_position
+		bullet3.linear_velocity = bullet3.transform.x * bullet_speed
+			
+		bullet1.add_collision_exception_with(bullet2)
+		bullet1.add_collision_exception_with(bullet3)
+			
+		bullet2.add_collision_exception_with(bullet1)
+		bullet2.add_collision_exception_with(bullet3)
+			
+		bullet3.add_collision_exception_with(bullet1)
+		bullet3.add_collision_exception_with(bullet2)
+			
+		bullet1.damage = bullet_damage
+		bullet2.damage = bullet_damage
+		bullet3.damage = bullet_damage
+			
+		get_tree().root.add_child(bullet1)
+		get_tree().root.add_child(bullet2)
+		get_tree().root.add_child(bullet3)
+		
+		time_until_fire = 0
+	else:
+		var bullet: RigidBody2D = bullet_scn.instantiate()
+			
+		bullet.rotation = global_rotation
+		bullet.global_position = $BulletPosition.global_position
+		bullet.linear_velocity = bullet.transform.x * bullet_speed
+			
+		bullet.damage = bullet_damage
+			
+		get_tree().root.add_child(bullet)
+		
+		time_until_fire = 0
