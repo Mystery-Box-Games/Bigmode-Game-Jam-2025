@@ -32,7 +32,7 @@ func attack():
 	bullet.damage = attack_damage
 	bullet.is_enemies = true
 			
-	get_tree().root.add_child(bullet)
+	get_tree().root.get_node("Game").add_child(bullet)
 	
 func _on_attack_range_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
