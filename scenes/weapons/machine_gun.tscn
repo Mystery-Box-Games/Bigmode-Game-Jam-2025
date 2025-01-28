@@ -22,4 +22,4 @@ position = Vector2(3, 0)
 texture = ExtResource("3_uyx1b")
 
 [node name="BulletPosition" type="Node2D" parent="."]
-position = Vector2(29, -7.5)
+position = Vector2(32, -7.5)
