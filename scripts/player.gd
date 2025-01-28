@@ -18,10 +18,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 		
-	if character_direction == Vector2(-1, 0):
+	#if character_direction == Vector2(-1, 0):
+	if (get_global_mouse_position() < global_position):
 		$AnimatedSprite2D.flip_h = true
 		weapon_socket.position.x = -9
-	elif character_direction == Vector2(1, 0):
+	#elif character_direction == Vector2(1, 0):
+	elif (get_global_mouse_position() > global_position):
 		$AnimatedSprite2D.flip_h = false
 		weapon_socket.position.x = 9
 		

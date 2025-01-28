@@ -16,7 +16,7 @@ collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_qhilp")
 attack_damage = 50.0
-aps = 0.5
+aps = 0.25
 speed = 0.5
 
 [node name="Health" type="Node2D" parent="."]
