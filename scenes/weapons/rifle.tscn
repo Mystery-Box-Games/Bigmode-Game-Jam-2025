@@ -7,7 +7,6 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_yhkg8"]
 
 [node name="Rifle" type="Node2D"]
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_vxxqu")
 bullet_scn = ExtResource("2_hg618")
 bullet_speed = 2000.0
@@ -20,7 +19,8 @@ sprite_frames = SubResource("SpriteFrames_yhkg8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, -1)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_mb6ob")
 
 [node name="BulletPosition" type="Node2D" parent="."]
-position = Vector2(38, -5.5)
+position = Vector2(56, -7.75)

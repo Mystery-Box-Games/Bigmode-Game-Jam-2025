@@ -8,7 +8,6 @@
 height = 72.0
 
 [node name="PickupRifle" type="Node2D"]
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_n1wm3")
 pickup_scene = ExtResource("2_h13px")
 
@@ -21,12 +20,14 @@ text = "Rifle"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_8vgge")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_b4kos")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
