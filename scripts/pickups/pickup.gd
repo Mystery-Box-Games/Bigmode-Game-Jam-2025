@@ -25,3 +25,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var weapon = pickup_scene.instantiate()
 		player.weapon_socket.add_child(weapon)
 		queue_free()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Player:
+		if player.weapon_socket.get_child_count() >= 0:
+			var children = player.weapon_socket.get_children()
+			for child in children:
+				player.weapon_socket.remove_child(child)
+		var weapon = pickup_scene.instantiate()
+		player.weapon_socket.add_child(weapon)
+		queue_free()
