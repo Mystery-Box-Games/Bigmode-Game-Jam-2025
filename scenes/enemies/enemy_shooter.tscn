@@ -12,8 +12,8 @@ radius = 30.0
 radius = 568.088
 
 [node name="EnemyShooter" type="CharacterBody2D"]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_n27h0")
 bullet_scn = ExtResource("2_5kedq")
@@ -34,6 +34,8 @@ texture = ExtResource("3_bqtwm")
 shape = SubResource("CircleShape2D_b4cqr")
 
 [node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_wrfnf")
@@ -41,5 +43,5 @@ shape = SubResource("CircleShape2D_wrfnf")
 [node name="BulletPosition" type="Node2D" parent="."]
 position = Vector2(49, 0)
 
-[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
-[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]
+[connection signal="area_exited" from="AttackRange" to="." method="_on_attack_range_area_exited"]

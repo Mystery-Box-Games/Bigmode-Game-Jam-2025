@@ -19,13 +19,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3fn54"]
-radius = 8.0
-height = 50.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sbuc4"]
 radius = 14.0
 height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3fn54"]
+radius = 8.0
+height = 50.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -38,18 +38,18 @@ script = ExtResource("2_iy13f")
 sprite_frames = SubResource("SpriteFrames_kk6k6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
-scale = Vector2(2, 2)
-shape = SubResource("CapsuleShape2D_3fn54")
+position = Vector2(0, 52)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_sbuc4")
 
 [node name="WeaponSocket" type="Node2D" parent="."]
 position = Vector2(9, 3)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hurtzone" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 52)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_sbuc4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtzone"]
+position = Vector2(0, 5)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_3fn54")
