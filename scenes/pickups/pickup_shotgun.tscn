@@ -8,6 +8,7 @@
 height = 72.0
 
 [node name="PickupShotgun" type="Node2D"]
+scale = Vector2(1.25, 1.25)
 script = ExtResource("1_ctmro")
 pickup_scene = ExtResource("2_63uc0")
 

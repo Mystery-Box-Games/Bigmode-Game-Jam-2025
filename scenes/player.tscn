@@ -39,4 +39,4 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_3fn54")
 
 [node name="WeaponSocket" type="Node2D" parent="."]
-position = Vector2(17, 0)
+position = Vector2(9, 3)

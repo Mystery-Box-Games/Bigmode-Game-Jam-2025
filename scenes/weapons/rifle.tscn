@@ -7,6 +7,7 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_yhkg8"]
 
 [node name="Rifle" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_vxxqu")
 bullet_scn = ExtResource("2_hg618")
 bullet_speed = 2000.0

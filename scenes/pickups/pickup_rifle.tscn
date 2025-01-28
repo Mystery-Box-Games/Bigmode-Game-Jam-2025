@@ -8,6 +8,7 @@
 height = 72.0
 
 [node name="PickupRifle" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_n1wm3")
 pickup_scene = ExtResource("2_h13px")
 
