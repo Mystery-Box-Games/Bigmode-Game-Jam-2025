@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8wifcawcc8n4"]
+[gd_scene load_steps=10 format=3 uid="uid://c8wifcawcc8n4"]
 
 [ext_resource type="PackedScene" uid="uid://crk70wqlbm3xp" path="res://scenes/player.tscn" id="1_iu3ed"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wom1f"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="5_qbudv"]
 [ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="6_70lff"]
 [ext_resource type="PackedScene" uid="uid://1ymd5fq0pt10" path="res://scenes/enemies/runner_spawner.tscn" id="7_0rhs5"]
+[ext_resource type="PackedScene" uid="uid://c3gh4ct35l1rn" path="res://scenes/enemies/shooter_spawner.tscn" id="8_exg0s"]
+[ext_resource type="PackedScene" uid="uid://gedicbr6flyf" path="res://scenes/enemies/brute_spawner.tscn" id="9_y2bcc"]
 
 [node name="Game" type="Node2D"]
 
@@ -18,6 +20,7 @@ position = Vector2(515, 296)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-5, 17)
+zoom = Vector2(0.75, 0.75)
 process_callback = 0
 position_smoothing_enabled = true
 
@@ -38,16 +41,22 @@ position = Vector2(702, 117)
 [node name="Spawners" type="Node" parent="."]
 
 [node name="RunnerSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("7_0rhs5")]
-spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4")]
+spawn_points = [NodePath("SpawnPoint")]
+eps = 0.1
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/RunnerSpawner"]
 position = Vector2(64, 67)
 
-[node name="SpawnPoint2" type="Node2D" parent="Spawners/RunnerSpawner"]
-position = Vector2(50, 554)
+[node name="ShooterSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("8_exg0s")]
+spawn_points = [NodePath("SpawnPoint")]
+eps = 0.1
 
-[node name="SpawnPoint3" type="Node2D" parent="Spawners/RunnerSpawner"]
-position = Vector2(944, 59)
+[node name="SpawnPoint" type="Node2D" parent="Spawners/ShooterSpawner"]
+position = Vector2(932, 72)
 
-[node name="SpawnPoint4" type="Node2D" parent="Spawners/RunnerSpawner"]
-position = Vector2(966, 547)
+[node name="BruteSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("9_y2bcc")]
+spawn_points = [NodePath("SpawnPoint")]
+eps = 0.1
+
+[node name="SpawnPoint" type="Node2D" parent="Spawners/BruteSpawner"]
+position = Vector2(515, 585)

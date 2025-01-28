@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ni53i0m41lv0"]
+[gd_scene load_steps=6 format=3 uid="uid://eh8kttovjdj4"]
 
-[ext_resource type="Texture2D" uid="uid://b6f6712d7t0cf" path="res://assets/sprites/enemies/enemy_temp.png" id="1_lblv0"]
-[ext_resource type="Script" path="res://scripts/enemies/enemy_runner.gd" id="1_oa4ih"]
-[ext_resource type="Script" path="res://scripts/health.gd" id="2_wivg0"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_runner.gd" id="1_qhilp"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="2_8dhf7"]
+[ext_resource type="Texture2D" uid="uid://b6f6712d7t0cf" path="res://assets/sprites/enemies/enemy_temp.png" id="3_jfraq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4cqr"]
 radius = 30.0
@@ -10,21 +10,24 @@ radius = 30.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrfnf"]
 radius = 42.0
 
-[node name="EnemyRunner" type="CharacterBody2D"]
+[node name="EnemyBrute" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1
-script = ExtResource("1_oa4ih")
-speed = 1.0
+script = ExtResource("1_qhilp")
+attack_damage = 50.0
+aps = 0.5
+speed = 0.5
 
 [node name="Health" type="Node2D" parent="."]
-script = ExtResource("2_wivg0")
+script = ExtResource("2_8dhf7")
+max_health = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, 0)
 rotation = 1.5708
 scale = Vector2(0.273438, 0.273438)
-texture = ExtResource("1_lblv0")
+texture = ExtResource("3_jfraq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b4cqr")
