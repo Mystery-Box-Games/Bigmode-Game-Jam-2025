@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_6mx28"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_iy13f"]
-[ext_resource type="Texture2D" uid="uid://8noud0s2gjrw" path="res://assets/sprites/player/player_temp.png" id="2_wt2n4"]
+[ext_resource type="Texture2D" uid="uid://bqdhi0x2jtjcc" path="res://assets/sprites/player/Zombie.png" id="3_pe4w0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fnuj"]
-atlas = ExtResource("2_wt2n4")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_muko6"]
+atlas = ExtResource("3_pe4w0")
+region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kk6k6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7fnuj")
+"texture": SubResource("AtlasTexture_muko6")
 }],
 "loop": true,
 "name": &"default",
@@ -32,8 +32,8 @@ script = ExtResource("1_6mx28")
 script = ExtResource("2_iy13f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -14)
-scale = Vector2(0.3125, 0.3125)
+position = Vector2(0, -10)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kk6k6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
