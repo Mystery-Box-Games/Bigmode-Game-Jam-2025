@@ -16,6 +16,7 @@ var flipped: bool = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sprite: Sprite2D = $Sprite2D
 
+@onready var game = get_tree().root.get_node("Game")
 
 func _get_configuration_warnings():
 	if not bullet_scn:
@@ -78,9 +79,9 @@ func fire():
 		bullet2.damage = bullet_damage
 		bullet3.damage = bullet_damage
 			
-		get_tree().root.add_child(bullet1)
-		get_tree().root.add_child(bullet2)
-		get_tree().root.add_child(bullet3)
+		game.add_child(bullet1)
+		game.add_child(bullet2)
+		game.add_child(bullet3)
 		
 		time_until_fire = 0
 	else:
@@ -92,6 +93,6 @@ func fire():
 			
 		bullet.damage = bullet_damage
 			
-		get_tree().root.add_child(bullet)
+		game.add_child(bullet)
 		
 		time_until_fire = 0

@@ -7,6 +7,8 @@ extends Node2D
 var spawn_rate: float
 var time_until_spawn: float = 0
 
+@onready var game = get_tree().root.get_node("Game")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_rate = 1 / eps
@@ -25,4 +27,4 @@ func spawn():
 	var location: Vector2 = spawn_points[rng.randi() % spawn_points.size()].global_position
 	var enemy: Enemy = enemy_scene.instantiate()
 	enemy.global_position = location
-	get_tree().root.add_child(enemy)
+	game.add_child(enemy)
