@@ -14,4 +14,7 @@ func damage(damage: float):
 		if (get_parent() is Player):
 			Globals.game_over = true
 		else:
+			Globals.enemies_defeated += 1
+			print(Globals.enemies_defeated)
 			get_parent().queue_free()
+			

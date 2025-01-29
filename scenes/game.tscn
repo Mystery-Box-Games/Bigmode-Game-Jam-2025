@@ -1,21 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8wifcawcc8n4"]
+[gd_scene load_steps=16 format=3 uid="uid://c8wifcawcc8n4"]
 
 [ext_resource type="PackedScene" uid="uid://crk70wqlbm3xp" path="res://scenes/player.tscn" id="1_iu3ed"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wom1f"]
 [ext_resource type="PackedScene" uid="uid://2fmcrv47lgpe" path="res://scenes/menus/game_over_menu.tscn" id="2_vjw0p"]
+[ext_resource type="PackedScene" uid="uid://dckad4id7a5nv" path="res://scenes/levels/level_2.tscn" id="3_cbfo6"]
 [ext_resource type="PackedScene" uid="uid://clgxdcp0tentf" path="res://scenes/menus/quit_menu.tscn" id="3_hkqpe"]
 [ext_resource type="PackedScene" uid="uid://cegbgjac217ah" path="res://scenes/ui.tscn" id="4_jdsuk"]
-[ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="4_p7i0v"]
-[ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="5_qbudv"]
-[ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="6_70lff"]
-[ext_resource type="PackedScene" uid="uid://1ymd5fq0pt10" path="res://scenes/enemies/runner_spawner.tscn" id="7_0rhs5"]
-[ext_resource type="PackedScene" uid="uid://c3gh4ct35l1rn" path="res://scenes/enemies/shooter_spawner.tscn" id="8_exg0s"]
-[ext_resource type="PackedScene" uid="uid://gedicbr6flyf" path="res://scenes/enemies/brute_spawner.tscn" id="9_y2bcc"]
+[ext_resource type="PackedScene" uid="uid://cceiyl3y8etsm" path="res://scenes/levels/level_3.tscn" id="4_qvpxf"]
+[ext_resource type="PackedScene" uid="uid://d3vunhu6cgufg" path="res://scenes/levels/level_4.tscn" id="5_lgqmm"]
+[ext_resource type="PackedScene" uid="uid://cgjfyng24wbig" path="res://scenes/levels/level_1.tscn" id="6_40mgs"]
+[ext_resource type="PackedScene" uid="uid://pe0nexx0aubc" path="res://scenes/levels/level_5.tscn" id="6_n6p82"]
+[ext_resource type="PackedScene" uid="uid://b1gwu4na6g5lk" path="res://scenes/levels/level_6.tscn" id="7_eua12"]
+[ext_resource type="PackedScene" uid="uid://bwluhs1yqbejt" path="res://scenes/levels/level_7.tscn" id="8_d2sqm"]
+[ext_resource type="PackedScene" uid="uid://4eukwiw1y5q2" path="res://scenes/levels/level_8.tscn" id="9_2jaxp"]
+[ext_resource type="PackedScene" uid="uid://caj88gkky7m45" path="res://scenes/levels/level_9.tscn" id="10_xrdhs"]
+[ext_resource type="PackedScene" uid="uid://csev47ygq2xbg" path="res://scenes/levels/level_10.tscn" id="11_kt4gt"]
 
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_wom1f")
+levels = Array[PackedScene]([ExtResource("6_40mgs"), ExtResource("3_cbfo6"), ExtResource("4_qvpxf"), ExtResource("5_lgqmm"), ExtResource("6_n6p82"), ExtResource("7_eua12"), ExtResource("8_d2sqm"), ExtResource("9_2jaxp"), ExtResource("10_xrdhs"), ExtResource("11_kt4gt")])
 
 [node name="GameOverMenu" parent="." instance=ExtResource("2_vjw0p")]
 visible = false
@@ -25,6 +30,10 @@ visible = false
 
 [node name="UI" parent="." instance=ExtResource("4_jdsuk")]
 
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [node name="Player" parent="." instance=ExtResource("1_iu3ed")]
 position = Vector2(515, 296)
 
@@ -33,42 +42,4 @@ position = Vector2(-5, 17)
 process_callback = 0
 position_smoothing_enabled = true
 
-[node name="Pickups" type="Node" parent="."]
-
-[node name="PickupMachineGun" parent="Pickups" instance=ExtResource("4_p7i0v")]
-position = Vector2(322, 117)
-
-[node name="PickupRifle" parent="Pickups" instance=ExtResource("5_qbudv")]
-position = Vector2(516, 159)
-
-[node name="PickupShotgun" parent="Pickups" instance=ExtResource("6_70lff")]
-position = Vector2(702, 117)
-
-[node name="Spawners" type="Node" parent="."]
-
-[node name="RunnerSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("7_0rhs5")]
-visible = false
-spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
-
-[node name="SpawnPoint" type="Node2D" parent="Spawners/RunnerSpawner"]
-visible = false
-position = Vector2(64, 67)
-
-[node name="ShooterSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("8_exg0s")]
-visible = false
-spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
-
-[node name="SpawnPoint" type="Node2D" parent="Spawners/ShooterSpawner"]
-visible = false
-position = Vector2(932, 72)
-
-[node name="BruteSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("9_y2bcc")]
-visible = false
-spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
-
-[node name="SpawnPoint" type="Node2D" parent="Spawners/BruteSpawner"]
-visible = false
-position = Vector2(515, 585)
+[connection signal="timeout" from="CooldownTimer" to="GameManager" method="_on_cooldown_timer_timeout"]

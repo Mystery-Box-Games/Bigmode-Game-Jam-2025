@@ -10,6 +10,9 @@ var credits_scene = preload("res://scenes/menus/credits_menu.tscn")
 
 var game_over: bool = false
 
+var enemies_defeated = 0
+
 func reset():
 	prevscene = null
 	game_over = false
+	enemies_defeated = 0

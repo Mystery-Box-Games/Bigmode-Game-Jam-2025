@@ -1,0 +1,18 @@
+extends Node2D
+
+@export var enemies_to_defeat: int = 1
+var enemies_defeated
+var round_over = false
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if (Globals.enemies_defeated >= enemies_to_defeat && !round_over):
+		round_over = true
+		Globals.enemies_defeated = 0
+		get_tree().root.get_node("Game").get_node("GameManager").round_over = true

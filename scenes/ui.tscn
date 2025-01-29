@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cegbgjac217ah"]
+[gd_scene load_steps=3 format=3 uid="uid://cegbgjac217ah"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_dw7dc"]
+[ext_resource type="Theme" uid="uid://odxvlb3cuew4" path="res://assets/themes/my_theme.tres" id="2_ujas6"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_dw7dc")
@@ -11,3 +12,16 @@ offset_top = 36.0
 offset_right = 769.0
 offset_bottom = 76.0
 value = 100.0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -317.0
+offset_top = 22.0
+offset_right = -39.0
+offset_bottom = 118.0
+grow_horizontal = 0
+theme = ExtResource("2_ujas6")
+theme_type_variation = &"MenuTitle"
+text = "Round 1"
