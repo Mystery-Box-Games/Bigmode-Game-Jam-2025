@@ -25,6 +25,8 @@ func _on_body_entered(body: Node) -> void:
 	if body is Enemy:
 		body.get_node("Health").damage(damage)
 		queue_free()
-	elif body is Player && is_enemies:
-		body.get_node("Health").damage(damage)
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Player && is_enemies:
+		area.get_parent().get_node("Health").damage(damage)
 		queue_free()

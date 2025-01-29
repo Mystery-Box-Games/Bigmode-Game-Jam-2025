@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://crk70wqlbm3xp" path="res://scenes/player.tscn" id="1_iu3ed"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wom1f"]
-[ext_resource type="PackedScene" path="res://scenes/quit_menu.tscn" id="3_hkqpe"]
+[ext_resource type="PackedScene" uid="uid://clgxdcp0tentf" path="res://scenes/quit_menu.tscn" id="3_hkqpe"]
 [ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="4_p7i0v"]
 [ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="5_qbudv"]
 [ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="6_70lff"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/runner_spawner.tscn" id="7_0rhs5"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/shooter_spawner.tscn" id="8_exg0s"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/brute_spawner.tscn" id="9_y2bcc"]
+[ext_resource type="PackedScene" uid="uid://1ymd5fq0pt10" path="res://scenes/enemies/runner_spawner.tscn" id="7_0rhs5"]
+[ext_resource type="PackedScene" uid="uid://c3gh4ct35l1rn" path="res://scenes/enemies/shooter_spawner.tscn" id="8_exg0s"]
+[ext_resource type="PackedScene" uid="uid://gedicbr6flyf" path="res://scenes/enemies/brute_spawner.tscn" id="9_y2bcc"]
 
 [node name="Game" type="Node2D"]
 
