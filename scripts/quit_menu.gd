@@ -12,14 +12,16 @@ func _process(delta: float) -> void:
 
 
 func _on_button_resume_pressed() -> void:
+	get_parent().process_mode = Node.PROCESS_MODE_PAUSABLE
 	visible = false
 
 
 func _on_button_retry_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	Globals.reset()
+	get_tree().change_scene_to_packed(Globals.game_scene)
 
 func _on_button_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
+	get_tree().change_scene_to_packed(Globals.options_scene)
 
 func _on_button_quit_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_packed(Globals.menu_scene)

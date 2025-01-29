@@ -11,4 +11,7 @@ func damage(damage: float):
 	health -= damage
 	
 	if (health <= 0):
-		get_parent().queue_free()
+		if (get_parent() is Player):
+			Globals.game_over = true
+		else:
+			get_parent().queue_free()
