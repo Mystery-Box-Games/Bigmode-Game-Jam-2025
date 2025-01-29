@@ -2,21 +2,16 @@
 
 [ext_resource type="Script" path="res://scripts/menus/credits_menu.gd" id="1_cmjkq"]
 
-[node name="CreditsMenu" type="Node2D"]
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_cmjkq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 1960.0
 offset_bottom = 1112.0
-grow_horizontal = 2
-grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="CreditsContainer" type="Control" parent="."]
