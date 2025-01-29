@@ -12,66 +12,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cakrj")
 
-[node name="Title" type="Label" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -95.5
-offset_top = 42.0
-offset_right = 95.5
-offset_bottom = 111.0
-grow_horizontal = 2
-theme = ExtResource("2_ieerh")
-theme_type_variation = &"MenuTitle"
-text = "Options"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -394.0
+offset_right = 295.0
+offset_bottom = 370.0
 grow_horizontal = 2
 grow_vertical = 2
+current_tab = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+[node name="Display" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
-theme = ExtResource("2_ieerh")
+alignment = 1
+metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="Volume" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "Volume"
-
-[node name="VolumeSlider" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Volume
-"
-
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="SFX" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Display"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "SFX
-"
+alignment = 1
 
-[node name="VolumeSlider2" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Display/HBoxContainer"]
 layout_mode = 2
-tooltip_text = "Volume
-"
+text = "Screen Resolution: "
 
-[node name="CheckButton" type="CheckButton" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Display/HBoxContainer"]
 layout_mode = 2
-text = "Button"
+selected = 1
+item_count = 3
+popup/item_0/text = "1280x720"
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+popup/item_2/text = "2560x1440"
+popup/item_2/id = 2
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Display"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Fullscreen"
+
+[node name="Audio" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="ButtonBack" type="Button" parent="."]
 layout_mode = 1
@@ -87,4 +75,6 @@ theme = ExtResource("2_ieerh")
 theme_type_variation = &"ButtonMain"
 text = "Back"
 
+[connection signal="item_selected" from="TabContainer/Display/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="TabContainer/Display/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
