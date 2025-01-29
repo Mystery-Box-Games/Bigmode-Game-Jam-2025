@@ -1,10 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cguu1m7e8lbbj"]
+[gd_scene load_steps=7 format=3 uid="uid://cguu1m7e8lbbj"]
 
 [ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_vxxqu"]
 [ext_resource type="PackedScene" uid="uid://nn1pg4nm6ct0" path="res://scenes/weapons/bullet.tscn" id="2_hg618"]
 [ext_resource type="Texture2D" uid="uid://brbxnsn8w8rso" path="res://assets/sprites/weapons/rifle/Rifle.png" id="3_mb6ob"]
+[ext_resource type="Texture2D" uid="uid://ckuxdn14ky7w1" path="res://assets/sprites/weapons/rifle/Rifle-Sheet.png" id="3_yaahm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s100y"]
+atlas = ExtResource("3_yaahm")
+region = Rect2(0, 0, 96, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yhkg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s100y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Rifle" type="Node2D"]
 script = ExtResource("1_vxxqu")
@@ -14,10 +28,11 @@ bps = 1.0
 bullet_damage = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
+position = Vector2(17, -1)
 sprite_frames = SubResource("SpriteFrames_yhkg8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(17, -1)
 texture = ExtResource("3_mb6ob")
 

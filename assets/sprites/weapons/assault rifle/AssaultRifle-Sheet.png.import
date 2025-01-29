@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwi0sj5igx7xl"
-path="res://.godot/imported/AssaultRiflePickup-Sheet.png-a746e92057771e5a8ed193483a1410c8.ctex"
+uid="uid://6eotsnr3yt01"
+path="res://.godot/imported/AssaultRifle-Sheet.png-f1aba32d14b7f6dfb5c54e4347b03316.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/weapons/assault rifle/AssaultRiflePickup-Sheet.png"
-dest_files=["res://.godot/imported/AssaultRiflePickup-Sheet.png-a746e92057771e5a8ed193483a1410c8.ctex"]
+source_file="res://assets/sprites/weapons/assault rifle/AssaultRifle-Sheet.png"
+dest_files=["res://.godot/imported/AssaultRifle-Sheet.png-f1aba32d14b7f6dfb5c54e4347b03316.ctex"]
 
 [params]
 

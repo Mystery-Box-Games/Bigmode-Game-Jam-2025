@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgli7fhneev56"
-path="res://.godot/imported/RiflePickup-Sheet.png-2730b0cb6f772fe19210b8f84c7591ff.ctex"
+uid="uid://ckuxdn14ky7w1"
+path="res://.godot/imported/Rifle-Sheet.png-8e68eadc37a1fe726c601c267038aec8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/weapons/rifle/RiflePickup-Sheet.png"
-dest_files=["res://.godot/imported/RiflePickup-Sheet.png-2730b0cb6f772fe19210b8f84c7591ff.ctex"]
+source_file="res://assets/sprites/weapons/rifle/Rifle-Sheet.png"
+dest_files=["res://.godot/imported/Rifle-Sheet.png-8e68eadc37a1fe726c601c267038aec8.ctex"]
 
 [params]
 
