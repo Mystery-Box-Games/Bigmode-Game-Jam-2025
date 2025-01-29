@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://clgxdcp0tentf"]
 
-[ext_resource type="Script" path="res://scripts/quit_menu.gd" id="1_o20yf"]
+[ext_resource type="Script" path="res://scripts/menus/quit_menu.gd" id="1_o20yf"]
 
 [node name="QuitMenu" type="CanvasLayer"]
 layer = 9
