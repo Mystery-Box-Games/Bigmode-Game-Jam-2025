@@ -10,8 +10,6 @@ height = 10.0
 
 [node name="BulletEnemy" type="RigidBody2D"]
 z_index = -1
-collision_layer = 4
-collision_mask = 4
 gravity_scale = 0.0
 lock_rotation = true
 contact_monitor = true

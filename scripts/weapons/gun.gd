@@ -35,11 +35,11 @@ func _process(delta: float) -> void:
 	look_at(mouse_position)
 	
 	if (mouse_position.x < global_position.x && !flipped):
-		sprite.flip_v = true
+		animated_sprite.flip_v = true
 		$BulletPosition.position.y *= -1
 		flipped = true
 	elif (mouse_position.x > global_position.x && flipped):
-		sprite.flip_v = false
+		animated_sprite.flip_v = false
 		$BulletPosition.position.y *= -1
 		flipped = false
 	
