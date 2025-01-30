@@ -15,8 +15,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#$AnimatedSprite2D.play("bullet")
 	pass
-
 
 func _on_timer_timeout() -> void:
 	queue_free()
