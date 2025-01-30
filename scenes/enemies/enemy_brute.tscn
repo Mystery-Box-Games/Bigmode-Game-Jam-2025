@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://eh8kttovjdj4"]
+[gd_scene load_steps=7 format=3 uid="uid://eh8kttovjdj4"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_brute.gd" id="1_i402s"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_8dhf7"]
+[ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="2_xohml"]
 [ext_resource type="Texture2D" uid="uid://b6f6712d7t0cf" path="res://assets/sprites/enemies/enemy_temp.png" id="3_jfraq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4cqr"]
@@ -15,6 +16,8 @@ collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_i402s")
+brains = ExtResource("2_xohml")
+brain_chance = 100
 attack_damage = 50.0
 aps = 0.25
 speed = 0.5
@@ -40,5 +43,6 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_wrfnf")
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]
 [connection signal="area_exited" from="AttackRange" to="." method="_on_attack_range_area_exited"]

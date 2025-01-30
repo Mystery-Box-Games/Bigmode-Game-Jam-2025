@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://qljme2kbfcq5"]
+[gd_scene load_steps=8 format=3 uid="uid://qljme2kbfcq5"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_shooter.gd" id="1_n27h0"]
 [ext_resource type="PackedScene" uid="uid://ckl41jmn7e1nf" path="res://scenes/weapons/bullet_enemy.tscn" id="2_5kedq"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_7u4ix"]
 [ext_resource type="Texture2D" uid="uid://b6f6712d7t0cf" path="res://assets/sprites/enemies/enemy_temp.png" id="3_bqtwm"]
+[ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="3_kugo2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4cqr"]
 radius = 30.0
@@ -17,6 +18,8 @@ collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_n27h0")
 bullet_scn = ExtResource("2_5kedq")
+brains = ExtResource("3_kugo2")
+brain_chance = 50
 attack_damage = 10.0
 aps = 1.0
 speed = 1.0
@@ -43,5 +46,6 @@ shape = SubResource("CircleShape2D_wrfnf")
 [node name="BulletPosition" type="Node2D" parent="."]
 position = Vector2(49, 0)
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]
 [connection signal="area_exited" from="AttackRange" to="." method="_on_attack_range_area_exited"]

@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 		game_over_screen = true
 		get_parent().process_mode = Node.PROCESS_MODE_DISABLED
 		$"../GameOverMenu".process_mode = Node.PROCESS_MODE_PAUSABLE
+		$"../UI".process_mode = Node.PROCESS_MODE_PAUSABLE
 		$"../GameOverMenu".visible = true
 	
 	# round is over when amount of specified enemies are defeated (see level_# inspector)
