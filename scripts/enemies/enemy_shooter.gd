@@ -6,14 +6,17 @@ extends "res://scripts/enemies/enemy.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initialize()
+	$AnimationPlayer.play("idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (player != null):
-		look_at(player.global_position)
-	
 	if (!within_attack_range):
 		move_character()
+		
+	if (player.global_position.x > global_position.x):
+			$Sprite.flip_h = false
+	elif (player.global_position.x < global_position.x):
+			$Sprite.flip_h = true
 	
 	if (within_attack_range && time_until_attack <= 0):
 		attack()
