@@ -94,8 +94,8 @@ min_distance = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y13pb")
-animation = &"attack"
-frame_progress = 0.435937
+animation = &"run"
+autoplay = "run"
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("2_wivg0")
@@ -121,13 +121,13 @@ collision_mask = 4
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_wrfnf")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AttackDetector" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_0kkg5")
 

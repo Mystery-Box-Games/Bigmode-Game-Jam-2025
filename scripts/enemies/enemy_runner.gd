@@ -1,5 +1,6 @@
 extends "res://scripts/enemies/enemy.gd"
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,15 +17,17 @@ func _process(delta: float) -> void:
 		time_until_attack -= delta
 		
 func attack():
+	animated_sprite.play("attack")
 	player.get_node("Health").damage(attack_damage)
 
 func _on_attack_range_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
-		print("player in range")
+		#print("player in range")
 		within_attack_range = true
+		$AttackDetector.monitoring = true
 
 func _on_attack_range_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
-		print("player out of range")
+		#print("player out of range")
 		within_attack_range = false
 		time_until_attack = attack_speed
