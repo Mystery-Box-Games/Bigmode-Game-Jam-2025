@@ -76,6 +76,7 @@ height = 106.0
 [node name="PickupRifle" type="Node2D"]
 script = ExtResource("1_n1wm3")
 pickup_scene = ExtResource("2_h13px")
+is_weapon = true
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -90,7 +91,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_b61y5")
 autoplay = "default"
-frame_progress = 0.499488
+frame_progress = 0.0429115
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

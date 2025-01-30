@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8wifcawcc8n4"]
+[gd_scene load_steps=18 format=3 uid="uid://c8wifcawcc8n4"]
 
 [ext_resource type="PackedScene" uid="uid://crk70wqlbm3xp" path="res://scenes/player.tscn" id="1_iu3ed"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wom1f"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://caj88gkky7m45" path="res://scenes/levels/level_9.tscn" id="10_xrdhs"]
 [ext_resource type="PackedScene" uid="uid://csev47ygq2xbg" path="res://scenes/levels/level_10.tscn" id="11_kt4gt"]
 [ext_resource type="PackedScene" uid="uid://d1bjxf6lvsaq7" path="res://scenes/background.tscn" id="16_81hbk"]
+[ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="17_0j5gh"]
 
 [node name="Game" type="Node2D"]
 
@@ -44,5 +45,8 @@ process_callback = 0
 position_smoothing_enabled = true
 
 [node name="Background" parent="." instance=ExtResource("16_81hbk")]
+
+[node name="PickupBrain" parent="." instance=ExtResource("17_0j5gh")]
+position = Vector2(4, 535)
 
 [connection signal="timeout" from="CooldownTimer" to="GameManager" method="_on_cooldown_timer_timeout"]

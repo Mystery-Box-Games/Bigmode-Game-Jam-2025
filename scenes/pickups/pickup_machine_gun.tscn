@@ -48,6 +48,7 @@ height = 72.0
 [node name="PickupMachineGun" type="Node2D"]
 script = ExtResource("1_ah44e")
 pickup_scene = ExtResource("2_w5dhj")
+is_weapon = true
 
 [node name="Label" type="Label" parent="."]
 visible = false

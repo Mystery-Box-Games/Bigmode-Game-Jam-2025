@@ -4,6 +4,8 @@ class_name Player
 
 const SPEED := 3.0
 
+var brain_power = 0
+
 @onready var weapon_socket: Node2D = $WeaponSocket
 
 func _physics_process(delta: float) -> void:
