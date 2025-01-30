@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 			$Sprite.flip_h = true
 
 	if (within_attack_range && time_until_attack <= 0):
+		$AnimationPlayer.play("attack")
 		time_until_attack = attack_speed
 	else:
 		time_until_attack -= delta
@@ -30,7 +31,6 @@ func end_of_attack():
 func _on_attack_range_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		within_attack_range = true
-		$AnimationPlayer.play("attack")
 
 func _on_attack_range_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
