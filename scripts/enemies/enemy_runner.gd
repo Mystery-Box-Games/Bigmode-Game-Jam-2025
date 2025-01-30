@@ -10,9 +10,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	move_character()
+	
+	if (player.global_position.x > global_position.x):
+			$Sprite.flip_h = false
+	elif (player.global_position.x < global_position.x):
+			$Sprite.flip_h = true
 
 	if (within_attack_range && time_until_attack <= 0):
-		attack()
 		time_until_attack = attack_speed
 	else:
 		time_until_attack -= delta
@@ -20,11 +24,12 @@ func _process(delta: float) -> void:
 func attack():
 	$AttackDetector.monitoring = true
 	
+func end_of_attack():
+	$AttackDetector.monitoring = false
 
 func _on_attack_range_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		within_attack_range = true
-		
 		$AnimationPlayer.play("attack")
 
 func _on_attack_range_area_exited(area: Area2D) -> void:

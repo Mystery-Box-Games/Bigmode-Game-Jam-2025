@@ -3,6 +3,7 @@ extends Node2D
 @export var enemy_scene: PackedScene
 @export var spawn_points: Array[Node2D]
 @export var eps: float = 1.0
+@export var disabled = false
 
 var spawn_rate: float
 var time_until_spawn: float = 0
@@ -16,6 +17,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if (disabled):
+		return
+	
 	if (time_until_spawn > spawn_rate):
 		spawn()
 		time_until_spawn = 0

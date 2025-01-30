@@ -25,5 +25,5 @@ func move_character():
 		var target_position = (player.global_position - global_position).normalized()
 		if (global_position.distance_to(player.global_position) > min_distance):
 			move_and_collide(target_position * speed)
-		look_at(player.global_position)
+		#look_at(player.global_position)
 	
