@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=3 uid="uid://ni53i0m41lv0"]
+[gd_scene load_steps=19 format=3 uid="uid://ni53i0m41lv0"]
 
-[ext_resource type="Texture2D" uid="uid://b6f6712d7t0cf" path="res://assets/sprites/enemies/enemy_temp.png" id="1_lblv0"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_runner.gd" id="1_oa4ih"]
 [ext_resource type="Texture2D" uid="uid://c1vfkn28uic8" path="res://assets/sprites/enemies/Runner-Sheet.png" id="2_skuu7"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_wivg0"]
@@ -84,6 +83,44 @@ radius = 59.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kkg5"]
 size = Vector2(108, 20)
 
+[sub_resource type="Animation" id="Animation_mfal1"]
+resource_name = "run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.166667, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_rpkx2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kys8s"]
+_data = {
+"RESET": SubResource("Animation_rpkx2"),
+"run": SubResource("Animation_mfal1")
+}
+
 [node name="EnemyRunner" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
@@ -93,27 +130,22 @@ speed = 1.0
 min_distance = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_y13pb")
 animation = &"run"
-autoplay = "run"
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("2_wivg0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(11, 0)
-rotation = 1.5708
-scale = Vector2(0.273438, 0.273438)
-texture = ExtResource("1_lblv0")
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_skuu7")
+hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_yf0d1")
 
 [node name="AttackRange" type="Area2D" parent="."]
-visible = false
 collision_layer = 4
 collision_mask = 4
 
@@ -131,5 +163,11 @@ monitorable = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_0kkg5")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kys8s")
+}
+
 [connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]
 [connection signal="area_exited" from="AttackRange" to="." method="_on_attack_range_area_exited"]
+[connection signal="area_entered" from="AttackDetector" to="." method="_on_attack_detector_area_entered"]

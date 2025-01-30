@@ -5,6 +5,7 @@ extends "res://scripts/enemies/enemy.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initialize()
+	$AnimationPlayer.play("run")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,17 +18,25 @@ func _process(delta: float) -> void:
 		time_until_attack -= delta
 		
 func attack():
-	animated_sprite.play("attack")
-	player.get_node("Health").damage(attack_damage)
+	$AttackDetector.monitoring = true
+	
 
 func _on_attack_range_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
-		#print("player in range")
 		within_attack_range = true
-		$AttackDetector.monitoring = true
+		
+		$AnimationPlayer.play("attack")
 
 func _on_attack_range_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		#print("player out of range")
 		within_attack_range = false
 		time_until_attack = attack_speed
+
+
+func _on_attack_detector_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Player:
+		player.get_node("Health").damage(attack_damage)
+
+func start_run():
+	$AnimationPlayer.play("run")
