@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://4eukwiw1y5q2" path="res://scenes/levels/level_8.tscn" id="9_2jaxp"]
 [ext_resource type="PackedScene" uid="uid://caj88gkky7m45" path="res://scenes/levels/level_9.tscn" id="10_xrdhs"]
 [ext_resource type="PackedScene" uid="uid://csev47ygq2xbg" path="res://scenes/levels/level_10.tscn" id="11_kt4gt"]
-[ext_resource type="Texture2D" uid="uid://sw51bf8qyw2e" path="res://assets/sprites/background_temp.png" id="16_57es6"]
+[ext_resource type="PackedScene" uid="uid://d1bjxf6lvsaq7" path="res://scenes/background.tscn" id="16_81hbk"]
 
 [node name="Game" type="Node2D"]
 
@@ -43,7 +43,6 @@ position = Vector2(-5, 17)
 process_callback = 0
 position_smoothing_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("16_57es6")
+[node name="Background" parent="." instance=ExtResource("16_81hbk")]
 
 [connection signal="timeout" from="CooldownTimer" to="GameManager" method="_on_cooldown_timer_timeout"]

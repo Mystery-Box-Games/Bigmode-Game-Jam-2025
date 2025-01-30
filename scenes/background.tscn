@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1bjxf6lvsaq7"]
+
+[ext_resource type="Texture2D" uid="uid://sw51bf8qyw2e" path="res://assets/sprites/background_temp.png" id="1_r4lin"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r4lin")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1864, 1036, -1920, 1080, 1920, 1080, 1920, -1080, -1920, -1080, -1920, 1080, -1864, 1036, -1864, -1036, 1876, -1036, 1876, 1036)
