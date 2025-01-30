@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-const SPEED := 5.0
+const SPEED := 3.0
 
 @onready var weapon_socket: Node2D = $WeaponSocket
 

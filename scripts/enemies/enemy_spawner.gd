@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Spawner
+
 @export var enemy_scene: PackedScene
 @export var spawn_points: Array[Node2D]
 @export var eps: float = 1.0

@@ -19,6 +19,7 @@ var within_attack_range: bool = false
 func initialize():
 	attack_speed = 1 / aps;
 	time_until_attack = attack_speed
+	add_to_group("enemies")
 	
 func move_character():
 	if (player != null):

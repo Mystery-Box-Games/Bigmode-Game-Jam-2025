@@ -43,6 +43,7 @@ func next_round():
 	
 	# if there are levels to load, load them first
 	if (round < levels.size() - 1):
+		print("loading next level")
 		get_parent().remove_child(current_level)
 		round += 1
 		current_level = levels[round].instantiate()
