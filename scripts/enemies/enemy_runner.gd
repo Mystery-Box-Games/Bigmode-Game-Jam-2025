@@ -45,3 +45,13 @@ func _on_attack_detector_area_entered(area: Area2D) -> void:
 
 func start_run():
 	$AnimationPlayer.play("run")
+	
+	
+func _on_tree_exiting() -> void:
+	var random = RandomNumberGenerator.new()
+	var number = random.randi_range(1, 100)
+	
+	if (number <= brain_chance):
+		var brain = brains.instantiate()
+		brain.global_position = global_position
+		get_tree().root.get_node("Game").add_child.call_deferred(brain)

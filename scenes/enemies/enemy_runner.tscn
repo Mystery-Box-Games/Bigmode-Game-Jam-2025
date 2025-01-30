@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://ni53i0m41lv0"]
+[gd_scene load_steps=21 format=3 uid="uid://ni53i0m41lv0"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_runner.gd" id="1_oa4ih"]
+[ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="2_1aila"]
 [ext_resource type="Texture2D" uid="uid://c1vfkn28uic8" path="res://assets/sprites/enemies/Runner-Sheet.png" id="2_skuu7"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_wivg0"]
 
@@ -163,6 +164,7 @@ collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_oa4ih")
+brains = ExtResource("2_1aila")
 speed = 1.0
 min_distance = 2.0
 
@@ -205,6 +207,7 @@ libraries = {
 "": SubResource("AnimationLibrary_kys8s")
 }
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]
 [connection signal="area_exited" from="AttackRange" to="." method="_on_attack_range_area_exited"]
 [connection signal="area_entered" from="AttackDetector" to="." method="_on_attack_detector_area_entered"]

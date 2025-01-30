@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 class_name Enemy
 
+@export var brains: PackedScene
+@export var brain_chance: int = 10
 @export var attack_damage: float = 20
 @export var aps: float = 2
 @export var speed: float = 40
