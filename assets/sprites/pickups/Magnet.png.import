@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc4seamla57by"
-path="res://.godot/imported/Magnet.png-e35bc82dbf6828590bab4a71b9744cca.ctex"
+path="res://.godot/imported/Magnet.png-3f8061f756bb0f0ec0a2a9906d668939.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pickups/Magnet.png"
-dest_files=["res://.godot/imported/Magnet.png-e35bc82dbf6828590bab4a71b9744cca.ctex"]
+source_file="res://assets/sprites/pickups/Magnet.png"
+dest_files=["res://.godot/imported/Magnet.png-3f8061f756bb0f0ec0a2a9906d668939.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://t0f2ccbjve0n"
-path="res://.godot/imported/Brain.png-6ab7a9fe941c68c099dc1c4d0815834e.ctex"
+path="res://.godot/imported/Brain.png-2c47df803d1751da787ae48a1fa71ad0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pickups/Brain.png"
-dest_files=["res://.godot/imported/Brain.png-6ab7a9fe941c68c099dc1c4d0815834e.ctex"]
+source_file="res://assets/sprites/pickups/Brain.png"
+dest_files=["res://.godot/imported/Brain.png-2c47df803d1751da787ae48a1fa71ad0.ctex"]
 
 [params]
 
