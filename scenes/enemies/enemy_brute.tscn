@@ -68,8 +68,9 @@ script = ExtResource("2_8dhf7")
 max_health = 200.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(26, 30)
 texture = ExtResource("4_yoi71")
-hframes = 6
+hframes = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 59)
