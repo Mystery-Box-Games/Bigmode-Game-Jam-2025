@@ -9,6 +9,7 @@ const SPEED := 3.0
 
 var damage_multiplier = 1
 var speed_multiplier = 1
+var bps_multiplier = 1
 
 var brain_power = 0
 var prev_brain_power = 0
@@ -88,38 +89,43 @@ func set_state(state: Tiers) -> void:
 		Tiers.BASE:
 			brain_power = 0
 			prev_brain_power = 0
-			damage_multiplier = 1
+			#damage_multiplier = 1
 			speed_multiplier = 1
+			bps_multiplier = 1
 		Tiers.ONE:
 			brain_power = 10
 			prev_brain_power = 10
-			damage_multiplier = 1.2
+			#damage_multiplier = 1.2
 			speed_multiplier = 1.2
-
+			bps_multiplier = 1.2
 		Tiers.TWO:
 			brain_power = 20
 			prev_brain_power = 20
-			damage_multiplier = 1.4
+			#damage_multiplier = 1.4
 			speed_multiplier = 1.4
-
+			bps_multiplier = 1.4
 		Tiers.THREE:
 			brain_power = 30
 			prev_brain_power = 30
-			damage_multiplier = 1.6
+			#damage_multiplier = 1.6
 			speed_multiplier = 1.6
-
+			bps_multiplier = 1.6
 		Tiers.FOUR:
 			brain_power = 40
 			prev_brain_power = 40
-			damage_multiplier = 1.8
+			#damage_multiplier = 1.8
 			speed_multiplier = 1.8
-
+			bps_multiplier = 1.8
 		Tiers.FIVE:
 			brain_power = 50
 			prev_brain_power = 50
-			damage_multiplier = 2
+			#damage_multiplier = 2
 			speed_multiplier = 2
-
+			bps_multiplier = 2
+			
+	if (weapon_socket.get_children().size() > 0):
+		weapon_socket.get_child(0).fire_rate = 1 / (weapon_socket.get_child(0).bps * bps_multiplier)
+			
 func next_tier() -> void:
 	brain_tier_index += 1
 	brain_tier_index = clampi(brain_tier_index, 0, 5)
