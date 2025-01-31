@@ -15,7 +15,7 @@ offset_right = 769.0
 offset_bottom = 76.0
 value = 100.0
 
-[node name="Label" type="Label" parent="."]
+[node name="RoundText" type="Label" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -42,18 +42,31 @@ grow_horizontal = 0
 grow_vertical = 0
 alignment = 1
 
-[node name="BrainProgress" type="TextureProgressBar" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="BrainProgress" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(175, 175)
 layout_mode = 2
 size_flags_horizontal = 4
+rounded = true
 fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("3_gqbn7")
 texture_progress = ExtResource("4_v8s71")
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="ResetProgress" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 175)
+layout_mode = 2
+size_flags_horizontal = 8
+value = 100.0
+fill_mode = 3
+
+[node name="BrainText" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ujas6")
 theme_override_font_sizes/font_size = 40
-text = "Brain Power: 0"
+text = "Tier: 0"
 horizontal_alignment = 1
