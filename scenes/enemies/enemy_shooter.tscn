@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://qljme2kbfcq5"]
+[gd_scene load_steps=13 format=3 uid="uid://qljme2kbfcq5"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_shooter.gd" id="1_n27h0"]
 [ext_resource type="PackedScene" uid="uid://ckl41jmn7e1nf" path="res://scenes/weapons/bullet_enemy.tscn" id="2_5kedq"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_7u4ix"]
 [ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="3_kugo2"]
 [ext_resource type="Texture2D" uid="uid://d0jqaghmgu3o4" path="res://assets/sprites/enemies/Shooter-Sheet.png" id="5_vct20"]
+[ext_resource type="PackedScene" uid="uid://cr1glkol2hv8f" path="res://scenes/weapons/enemy_shooter_gun.tscn" id="6_ocyja"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aabvl"]
 radius = 13.0
@@ -12,6 +13,10 @@ height = 60.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrfnf"]
 radius = 513.062
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1smtp"]
+radius = 23.0
+height = 116.0
 
 [sub_resource type="Animation" id="Animation_um3py"]
 length = 0.001
@@ -51,10 +56,6 @@ _data = {
 "idle": SubResource("Animation_hfttu")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1smtp"]
-radius = 23.0
-height = 116.0
-
 [node name="EnemyShooter" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_n27h0")
@@ -73,9 +74,15 @@ texture = ExtResource("5_vct20")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 53)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_aabvl")
+
+[node name="WeaponSocket" type="Node2D" parent="."]
+position = Vector2(12, 3)
+
+[node name="EnemyShooterGun" parent="WeaponSocket" instance=ExtResource("6_ocyja")]
 
 [node name="AttackRange" type="Area2D" parent="."]
 visible = false
@@ -85,21 +92,19 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_wrfnf")
 
-[node name="BulletPosition" type="Node2D" parent="."]
-position = Vector2(49, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_8igpg")
-}
-
 [node name="Hurtzone" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtzone"]
 position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_1smtp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8igpg")
+}
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]

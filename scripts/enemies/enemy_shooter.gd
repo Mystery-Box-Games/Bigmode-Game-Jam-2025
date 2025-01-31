@@ -3,6 +3,9 @@ extends "res://scripts/enemies/enemy.gd"
 @export var bullet_scn: PackedScene
 @export var bullet_speed: float = 1200
 
+@onready var enemy_shooter_gun: Node2D = $WeaponSocket/EnemyShooterGun
+@onready var weapon_socket: Node2D = $WeaponSocket
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initialize()
@@ -15,27 +18,17 @@ func _process(delta: float) -> void:
 		
 	if (player.global_position.x > global_position.x):
 			$Sprite.flip_h = false
+			weapon_socket.position.x = 12
 	elif (player.global_position.x < global_position.x):
 			$Sprite.flip_h = true
+			weapon_socket.position.x = -12
 	
 	if (within_attack_range && time_until_attack <= 0):
-		attack()
+		enemy_shooter_gun.attack()
 		time_until_attack = attack_speed
 	else:
 		time_until_attack -= delta
 		
-func attack():
-	print("Shooter is attacking")
-	var bullet: RigidBody2D = bullet_scn.instantiate()
-			
-	bullet.rotation = global_rotation
-	bullet.global_position = $BulletPosition.global_position
-	bullet.linear_velocity = bullet.transform.x * bullet_speed
-			
-	bullet.damage = attack_damage
-	bullet.is_enemies = true
-			
-	get_tree().root.get_node("Game").add_child(bullet)
 	
 func _on_attack_range_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
