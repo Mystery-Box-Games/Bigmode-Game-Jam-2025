@@ -30,8 +30,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		elif is_brain:
 			print("brains")
 			body.brain_power += 1
-			body.get_node("Health").health += 5
+			body.get_node("Health").health += 2
 			queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
