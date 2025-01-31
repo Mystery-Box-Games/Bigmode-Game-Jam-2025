@@ -1,15 +1,53 @@
-[gd_scene load_steps=7 format=3 uid="uid://eh8kttovjdj4"]
+[gd_scene load_steps=10 format=3 uid="uid://eh8kttovjdj4"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_brute.gd" id="1_i402s"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_8dhf7"]
 [ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="2_xohml"]
-[ext_resource type="Texture2D" uid="uid://b6f6712d7t0cf" path="res://assets/sprites/enemies/enemy_temp.png" id="3_jfraq"]
+[ext_resource type="Texture2D" uid="uid://bjqscped4uiqo" path="res://assets/sprites/enemies/Brute-Sheet.png" id="4_yoi71"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b4cqr"]
-radius = 30.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2y3hk"]
+radius = 52.0
+height = 156.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrfnf"]
-radius = 42.0
+radius = 120.599
+
+[sub_resource type="Animation" id="Animation_ajwg1"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.366667, 0.566667, 0.766667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_c2e71"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xfavc"]
+_data = {
+"RESET": SubResource("Animation_c2e71"),
+"walk": SubResource("Animation_ajwg1")
+}
 
 [node name="EnemyBrute" type="CharacterBody2D"]
 collision_layer = 3
@@ -27,14 +65,13 @@ min_distance = 5.0
 script = ExtResource("2_8dhf7")
 max_health = 200.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(11, 0)
-rotation = 1.5708
-scale = Vector2(0.273438, 0.273438)
-texture = ExtResource("3_jfraq")
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("4_yoi71")
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_b4cqr")
+position = Vector2(0, 15)
+shape = SubResource("CapsuleShape2D_2y3hk")
 
 [node name="AttackRange" type="Area2D" parent="."]
 collision_layer = 4
@@ -42,6 +79,12 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_wrfnf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xfavc")
+}
+autoplay = "walk"
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]
