@@ -9,10 +9,13 @@ extends Node2D
 @export var bullet_damage: float = 30.0
 @export var is_shotgun: bool = false
 
+var speed
+var damage
 var fire_rate: float
 var time_until_fire: float = 0.0
 var flipped: bool = false
 
+@onready var player = get_tree().root.get_node("Game").get_node("Player")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sprite: Sprite2D = $Sprite2D
 
@@ -26,6 +29,8 @@ func _get_configuration_warnings():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fire_rate = 1 / bps
+	speed = bullet_speed
+	damage = bullet_damage
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,15 +61,15 @@ func fire():
 			
 		bullet1.rotation = global_rotation
 		bullet1.global_position = $BulletPosition.global_position
-		bullet1.linear_velocity = bullet1.transform.x * bullet_speed
+		bullet1.linear_velocity = bullet1.transform.x * speed
 			
 		bullet2.rotation = global_rotation + .2
 		bullet2.global_position = $BulletPosition.global_position
-		bullet2.linear_velocity = bullet2.transform.x * bullet_speed
+		bullet2.linear_velocity = bullet2.transform.x * speed
 			
 		bullet3.rotation = global_rotation - .2
 		bullet3.global_position = $BulletPosition.global_position
-		bullet3.linear_velocity = bullet3.transform.x * bullet_speed
+		bullet3.linear_velocity = bullet3.transform.x * speed
 			
 		bullet1.add_collision_exception_with(bullet2)
 		bullet1.add_collision_exception_with(bullet3)
@@ -75,9 +80,9 @@ func fire():
 		bullet3.add_collision_exception_with(bullet1)
 		bullet3.add_collision_exception_with(bullet2)
 			
-		bullet1.damage = bullet_damage
-		bullet2.damage = bullet_damage
-		bullet3.damage = bullet_damage
+		bullet1.damage = damage * player.damage_multiplier
+		bullet2.damage = damage * player.damage_multiplier
+		bullet3.damage = damage * player.damage_multiplier
 			
 		game.add_child(bullet1)
 		game.add_child(bullet2)
@@ -89,9 +94,9 @@ func fire():
 			
 		bullet.rotation = global_rotation
 		bullet.global_position = $BulletPosition.global_position
-		bullet.linear_velocity = bullet.transform.x * bullet_speed
+		bullet.linear_velocity = bullet.transform.x * speed
 			
-		bullet.damage = bullet_damage
+		bullet.damage = damage * player.damage_multiplier
 			
 		game.add_child(bullet)
 		

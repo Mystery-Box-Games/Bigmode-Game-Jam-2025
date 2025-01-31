@@ -7,6 +7,9 @@ var tier: Tiers = Tiers.BASE
 
 const SPEED := 3.0
 
+var damage_multiplier = 1
+var speed_multiplier = 1
+
 var brain_power = 0
 var prev_brain_power = 0
 var brain_tier_index = 0
@@ -25,12 +28,12 @@ var brain_tier = {
 
 func _physics_process(delta: float) -> void:
 	brain_tier_index = clampi(brain_tier_index, 0, 5)
-	brain_power = clampi(brain_power, 0, 50)
+	#brain_power = clampi(brain_power, 0, 50)
 	
 	if (prev_brain_power < brain_power):
 		prev_brain_power = brain_power
 		brain_power_timer.start()
-	if (brain_power > 0 && brain_power_timer.is_stopped()):
+	if (tier != Tiers.BASE && brain_power_timer.is_stopped()):
 		print("starting timer")
 		brain_power_timer.start()
 	
@@ -39,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	
 	# move character in specified direction
 	if character_direction:
-		velocity = character_direction.normalized() * (SPEED * 100)
+		velocity = character_direction.normalized() * ((SPEED * 100) * speed_multiplier)
 	else:
 		velocity = Vector2.ZERO
 		
@@ -51,26 +54,67 @@ func _physics_process(delta: float) -> void:
 	elif (get_global_mouse_position() > global_position):
 		$AnimatedSprite2D.flip_h = false
 		weapon_socket.position.x = 9
-		
+	
+	#if (brain_power < 10):
+		#brain_tier_index = 0
+		#set_state(brain_tier_index)
+	#elif (brain_power >= 10 && brain_power < 20):
+		#brain_tier_index = 1
+		#set_state(brain_tier_index)
+	#elif (brain_power >= 20 && brain_power < 30):
+		#brain_tier_index = 2
+		#set_state(brain_tier_index)
+	#elif (brain_power >= 30 && brain_power < 40):
+		#brain_tier_index = 3
+		#set_state(brain_tier_index)
+	#elif (brain_power >= 40 && brain_power < 50):
+		#brain_tier_index = 4
+		#set_state(brain_tier_index)
+	#elif (brain_power >= 50):
+		#brain_tier_index = 5
+		#set_state(brain_tier_index)
+	
 	move_and_slide()
 
 func _on_brain_power_timer_timeout() -> void:
+	#brain_power -= 10
 	brain_tier_index -= 1
 	brain_tier_index = clampi(brain_tier_index, 0, 5)
 	set_state(brain_tier[brain_tier_index])
 
 func set_state(state: Tiers) -> void:
-	match state:
+	tier = state
+	match tier:
 		Tiers.BASE:
-			pass
+			brain_power = 0
+			damage_multiplier = 1
+			speed_multiplier = 1
 		Tiers.ONE:
-			pass
+			brain_power = 10
+			damage_multiplier = 1.2
+			speed_multiplier = 1.2
+
 		Tiers.TWO:
-			pass
+			brain_power = 20
+			damage_multiplier = 1.4
+			speed_multiplier = 1.4
+
 		Tiers.THREE:
-			pass
+			brain_power = 30
+			damage_multiplier = 1.6
+			speed_multiplier = 1.6
+
 		Tiers.FOUR:
-			pass
+			brain_power = 40
+			damage_multiplier = 1.8
+			speed_multiplier = 1.8
+
 		Tiers.FIVE:
-			pass
-	
+			brain_power = 50
+			damage_multiplier = 2
+			speed_multiplier = 2
+
+func next_tier() -> void:
+	brain_tier_index += 1
+	brain_tier_index = clampi(brain_tier_index, 0, 5)
+	set_state(brain_tier[brain_tier_index])
