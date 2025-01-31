@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qljme2kbfcq5"]
+[gd_scene load_steps=12 format=3 uid="uid://qljme2kbfcq5"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_shooter.gd" id="1_n27h0"]
 [ext_resource type="PackedScene" uid="uid://ckl41jmn7e1nf" path="res://scenes/weapons/bullet_enemy.tscn" id="2_5kedq"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://d0jqaghmgu3o4" path="res://assets/sprites/enemies/Shooter-Sheet.png" id="5_vct20"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aabvl"]
-radius = 28.0
-height = 124.0
+radius = 13.0
+height = 60.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrfnf"]
 radius = 513.062
@@ -51,9 +51,11 @@ _data = {
 "idle": SubResource("Animation_hfttu")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1smtp"]
+radius = 23.0
+height = 116.0
+
 [node name="EnemyShooter" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_n27h0")
 bullet_scn = ExtResource("2_5kedq")
@@ -71,10 +73,12 @@ texture = ExtResource("5_vct20")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
+position = Vector2(0, 53)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_aabvl")
 
 [node name="AttackRange" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 
@@ -88,6 +92,14 @@ position = Vector2(49, 0)
 libraries = {
 "": SubResource("AnimationLibrary_8igpg")
 }
+
+[node name="Hurtzone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtzone"]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_1smtp")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]

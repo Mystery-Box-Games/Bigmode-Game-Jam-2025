@@ -21,12 +21,15 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	queue_free()
 
-func _on_body_entered(body: Node) -> void:
-	if body is Enemy:
-		body.get_node("Health").damage(damage)
-		queue_free()
+#func _on_body_entered(body: Node) -> void:
+	#if body is Enemy:
+		#body.get_node("Health").damage(damage)
+		#queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Enemy && !is_enemies:
+		area.get_parent().get_node("Health").damage(damage)
+		queue_free()
 	if area.get_parent() is Player && is_enemies:
 		area.get_parent().get_node("Health").damage(damage)
 		queue_free()

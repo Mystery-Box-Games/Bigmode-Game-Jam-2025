@@ -73,6 +73,7 @@ animations = [{
 height = 90.0
 
 [node name="PickupShotgun" type="Node2D"]
+z_index = -1
 script = ExtResource("1_ctmro")
 pickup_scene = ExtResource("2_63uc0")
 is_weapon = true

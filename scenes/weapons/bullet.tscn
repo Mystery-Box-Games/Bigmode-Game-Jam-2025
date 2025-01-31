@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nn1pg4nm6ct0"]
+[gd_scene load_steps=8 format=3 uid="uid://nn1pg4nm6ct0"]
 
 [ext_resource type="Script" path="res://scripts/weapons/bullet.gd" id="1_o6ext"]
 [ext_resource type="Texture2D" uid="uid://bfqmay3i4gqkw" path="res://assets/sprites/weapons/Bullet-Sheet.png" id="2_eui1t"]
@@ -29,6 +29,10 @@ animations = [{
 radius = 1.0
 height = 8.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7qgru"]
+radius = 1.0
+height = 8.0
+
 [node name="Bullet" type="RigidBody2D"]
 z_index = 1
 collision_layer = 2
@@ -44,6 +48,8 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3co4f")
 animation = &"flash"
 autoplay = "flash"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -54,5 +60,13 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7qgru")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

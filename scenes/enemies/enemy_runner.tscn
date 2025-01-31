@@ -1,88 +1,23 @@
-[gd_scene load_steps=21 format=3 uid="uid://ni53i0m41lv0"]
+[gd_scene load_steps=13 format=3 uid="uid://ni53i0m41lv0"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_runner.gd" id="1_oa4ih"]
 [ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="2_1aila"]
 [ext_resource type="Texture2D" uid="uid://c1vfkn28uic8" path="res://assets/sprites/enemies/Runner-Sheet.png" id="2_skuu7"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_wivg0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7n6mw"]
-atlas = ExtResource("2_skuu7")
-region = Rect2(448, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwiso"]
-atlas = ExtResource("2_skuu7")
-region = Rect2(560, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_625b1"]
-atlas = ExtResource("2_skuu7")
-region = Rect2(672, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hxc38"]
-atlas = ExtResource("2_skuu7")
-region = Rect2(784, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tkssb"]
-atlas = ExtResource("2_skuu7")
-region = Rect2(0, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_173p1"]
-atlas = ExtResource("2_skuu7")
-region = Rect2(112, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljfk8"]
-atlas = ExtResource("2_skuu7")
-region = Rect2(224, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gyb3n"]
-atlas = ExtResource("2_skuu7")
-region = Rect2(336, 0, 112, 112)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_y13pb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7n6mw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uwiso")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_625b1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hxc38")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tkssb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_173p1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ljfk8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gyb3n")
-}],
-"loop": true,
-"name": &"run",
-"speed": 8.0
-}]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf0d1"]
-radius = 32.0
-height = 116.0
+radius = 12.0
+height = 54.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrfnf"]
 radius = 59.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kkg5"]
 size = Vector2(108, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a47bu"]
+radius = 19.0
+height = 112.0
 
 [sub_resource type="Animation" id="Animation_rpkx2"]
 length = 0.001
@@ -160,19 +95,12 @@ _data = {
 }
 
 [node name="EnemyRunner" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_oa4ih")
 brains = ExtResource("2_1aila")
 brain_chance = 40
 speed = 1.0
 min_distance = 2.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_y13pb")
-animation = &"run"
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("2_wivg0")
@@ -182,10 +110,13 @@ texture = ExtResource("2_skuu7")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+visible = false
+position = Vector2(0, 44)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yf0d1")
 
 [node name="AttackRange" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 
@@ -194,6 +125,7 @@ position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_wrfnf")
 
 [node name="AttackDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 monitoring = false
@@ -202,6 +134,15 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_0kkg5")
+
+[node name="Hurtzone" type="Area2D" parent="."]
+visible = false
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtzone"]
+shape = SubResource("CapsuleShape2D_a47bu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

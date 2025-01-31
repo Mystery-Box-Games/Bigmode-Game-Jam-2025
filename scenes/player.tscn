@@ -49,7 +49,6 @@ radius = 8.0
 height = 50.0
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
 script = ExtResource("1_6mx28")
 
 [node name="Health" type="Node2D" parent="."]

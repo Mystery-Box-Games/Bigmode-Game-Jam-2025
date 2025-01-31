@@ -46,6 +46,7 @@ radius = 13.0
 height = 72.0
 
 [node name="PickupMachineGun" type="Node2D"]
+z_index = -1
 script = ExtResource("1_ah44e")
 pickup_scene = ExtResource("2_w5dhj")
 is_weapon = true

@@ -74,6 +74,7 @@ radius = 12.0
 height = 106.0
 
 [node name="PickupRifle" type="Node2D"]
+z_index = -1
 script = ExtResource("1_n1wm3")
 pickup_scene = ExtResource("2_h13px")
 is_weapon = true
