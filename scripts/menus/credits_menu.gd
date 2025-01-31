@@ -30,7 +30,7 @@ var credits = [
 		"Robert Disbrow"
 	],[
 		"Art",
-		"Artist Name"
+		"Robert Disbrow"
 	],[
 		"Music",
 		"Musician Name"
@@ -47,7 +47,7 @@ var credits = [
 		"Developed with Godot Engine",
 		"https://godotengine.org/license",
 		"",
-		"Art created with My Favourite Art Program",
+		"Art created with Aseprite",
 		"https://myfavouriteartprogram.com"
 	],[
 		"Special thanks",
