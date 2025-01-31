@@ -87,30 +87,36 @@ func set_state(state: Tiers) -> void:
 	match tier:
 		Tiers.BASE:
 			brain_power = 0
+			prev_brain_power = 0
 			damage_multiplier = 1
 			speed_multiplier = 1
 		Tiers.ONE:
 			brain_power = 10
+			prev_brain_power = 10
 			damage_multiplier = 1.2
 			speed_multiplier = 1.2
 
 		Tiers.TWO:
 			brain_power = 20
+			prev_brain_power = 20
 			damage_multiplier = 1.4
 			speed_multiplier = 1.4
 
 		Tiers.THREE:
 			brain_power = 30
+			prev_brain_power = 30
 			damage_multiplier = 1.6
 			speed_multiplier = 1.6
 
 		Tiers.FOUR:
 			brain_power = 40
+			prev_brain_power = 40
 			damage_multiplier = 1.8
 			speed_multiplier = 1.8
 
 		Tiers.FIVE:
 			brain_power = 50
+			prev_brain_power = 50
 			damage_multiplier = 2
 			speed_multiplier = 2
 

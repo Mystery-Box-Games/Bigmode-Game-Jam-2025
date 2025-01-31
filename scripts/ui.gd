@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 			brain_progress.min_value = 50
 	
 	brain_progress.value = player.brain_power
-	if (brain_progress.value == brain_progress.max_value && player.brain_power < 50):
+	if (brain_progress.value == brain_progress.max_value && player.brain_power <= 50):
 		player.next_tier()
 	brain_text.text = "Tier: %s" % player.brain_tier_index
 	
