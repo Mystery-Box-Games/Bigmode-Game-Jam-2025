@@ -18,10 +18,10 @@ func _process(delta: float) -> void:
 		
 	if (player.global_position.x > global_position.x):
 			$Sprite.flip_h = false
-			weapon_socket.position.x = 12
+			weapon_socket.position.x = 10
 	elif (player.global_position.x < global_position.x):
 			$Sprite.flip_h = true
-			weapon_socket.position.x = -12
+			weapon_socket.position.x = -10
 	
 	if (within_attack_range && time_until_attack <= 0):
 		enemy_shooter_gun.attack()

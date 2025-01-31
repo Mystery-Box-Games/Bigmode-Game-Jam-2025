@@ -10,44 +10,42 @@
 
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_50iwk")
-enemies_to_defeat = 40
+enemies_to_defeat = 50
 
 [node name="Pickups" type="Node" parent="."]
 
 [node name="PickupMachineGun" parent="Pickups" instance=ExtResource("2_xudmg")]
-position = Vector2(322, 117)
+position = Vector2(-135, 746)
 
 [node name="PickupRifle" parent="Pickups" instance=ExtResource("3_2myj1")]
-position = Vector2(516, 159)
+position = Vector2(-2, 746)
 
 [node name="PickupShotgun" parent="Pickups" instance=ExtResource("4_3fc80")]
-position = Vector2(702, 117)
+position = Vector2(134, 747)
 
 [node name="Spawners" type="Node" parent="."]
 
-[node name="RunnerSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("5_kvvit")]
-visible = false
+[node name="RunnerSpawner" parent="." node_paths=PackedStringArray("spawn_points") instance=ExtResource("5_kvvit")]
+spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint2")]
+eps = 1.5
+
+[node name="SpawnPoint" type="Node2D" parent="RunnerSpawner"]
+position = Vector2(-900, -600)
+
+[node name="SpawnPoint2" type="Node2D" parent="RunnerSpawner"]
+position = Vector2(900, 600)
+
+[node name="ShooterSpawner" parent="." node_paths=PackedStringArray("spawn_points") instance=ExtResource("6_6rbqy")]
+spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint2")]
+
+[node name="SpawnPoint" type="Node2D" parent="ShooterSpawner"]
+position = Vector2(-900, 600)
+
+[node name="SpawnPoint2" type="Node2D" parent="ShooterSpawner"]
+position = Vector2(900, -600)
+
+[node name="BruteSpawner" parent="." node_paths=PackedStringArray("spawn_points") instance=ExtResource("7_0gryo")]
 spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
+eps = 0.6
 
-[node name="SpawnPoint" type="Node2D" parent="Spawners/RunnerSpawner"]
-visible = false
-position = Vector2(64, 67)
-
-[node name="ShooterSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("6_6rbqy")]
-visible = false
-spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
-
-[node name="SpawnPoint" type="Node2D" parent="Spawners/ShooterSpawner"]
-visible = false
-position = Vector2(932, 72)
-
-[node name="BruteSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("7_0gryo")]
-visible = false
-spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
-
-[node name="SpawnPoint" type="Node2D" parent="Spawners/BruteSpawner"]
-visible = false
-position = Vector2(515, 585)
+[node name="SpawnPoint" type="Node2D" parent="BruteSpawner"]

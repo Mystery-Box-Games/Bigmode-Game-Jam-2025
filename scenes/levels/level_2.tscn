@@ -25,7 +25,7 @@ position = Vector2(134, 747)
 
 [node name="ShooterSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("6_vif2o")]
 spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint3")]
-eps = 0.7
+eps = 0.5
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/ShooterSpawner"]
 position = Vector2(-720, -750)

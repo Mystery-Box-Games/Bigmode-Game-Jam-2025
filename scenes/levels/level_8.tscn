@@ -15,13 +15,13 @@ enemies_to_defeat = 45
 [node name="Pickups" type="Node" parent="."]
 
 [node name="PickupMachineGun" parent="Pickups" instance=ExtResource("2_ps45p")]
-position = Vector2(322, 117)
+position = Vector2(-135, 746)
 
 [node name="PickupRifle" parent="Pickups" instance=ExtResource("3_lm3ue")]
-position = Vector2(516, 159)
+position = Vector2(-2, 746)
 
 [node name="PickupShotgun" parent="Pickups" instance=ExtResource("4_1etqo")]
-position = Vector2(702, 117)
+position = Vector2(134, 747)
 
 [node name="Spawners" type="Node" parent="."]
 
