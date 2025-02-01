@@ -55,6 +55,8 @@ func start_walk():
 	animation_player.play("walk")
 
 func _on_tree_exiting() -> void:
+	Globals.score += score
+	
 	var random = RandomNumberGenerator.new()
 	var number = random.randi_range(1, 100)
 	

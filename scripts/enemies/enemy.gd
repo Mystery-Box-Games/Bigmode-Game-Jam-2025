@@ -11,6 +11,7 @@ class_name Enemy
 @export var aps: float = 2
 @export var speed: float = 40
 @export var min_distance: float = 0
+@export var score: int = 10
 
 var attack_speed: float
 var time_until_attack: float

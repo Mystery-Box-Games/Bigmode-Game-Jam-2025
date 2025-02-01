@@ -42,6 +42,8 @@ func _on_attack_range_area_exited(area: Area2D) -> void:
 		time_until_attack = attack_speed
 
 func _on_tree_exiting() -> void:
+	Globals.score += score
+	
 	var random = RandomNumberGenerator.new()
 	var number = random.randi_range(1, 100)
 	

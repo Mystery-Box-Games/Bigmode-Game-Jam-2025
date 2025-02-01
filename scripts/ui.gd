@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var brain_text: Label = $VBoxContainer/BrainText
 @onready var brain_progress: TextureProgressBar = $VBoxContainer/HBoxContainer/BrainProgress
 @onready var reset_progress: ProgressBar = $VBoxContainer/HBoxContainer/ResetProgress
+@onready var score_text: Label = $ScoreText
 
 
 # Called when the node enters the scene tree for the first time.
@@ -47,3 +48,4 @@ func _process(delta: float) -> void:
 	reset_progress.value = (player.get_node("BrainPowerTimer").get_time_left() / player.get_node("BrainPowerTimer").get_wait_time()) * 100
 	
 	round_text.text = "Round %s" % (game.round + 1)
+	score_text.text = "Score: %s" % Globals.score

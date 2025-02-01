@@ -65,6 +65,7 @@ brain_chance = 40
 attack_damage = 10.0
 aps = 1.0
 speed = 1.0
+score = 20
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource("2_7u4ix")
