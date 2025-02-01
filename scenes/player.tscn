@@ -107,7 +107,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_a361d")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 4.0
 }, {
 "frames": [{
@@ -150,8 +150,8 @@ script = ExtResource("2_iy13f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kk6k6")
-animation = &"backstep"
-autoplay = "default"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 52)

@@ -25,6 +25,7 @@ var brain_tier = {
 
 @onready var weapon_socket: Node2D = $WeaponSocket
 @onready var brain_power_timer: Timer = $BrainPowerTimer
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -56,24 +57,26 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false
 		weapon_socket.position.x = 9
 	
-	#if (brain_power < 10):
-		#brain_tier_index = 0
-		#set_state(brain_tier_index)
-	#elif (brain_power >= 10 && brain_power < 20):
-		#brain_tier_index = 1
-		#set_state(brain_tier_index)
-	#elif (brain_power >= 20 && brain_power < 30):
-		#brain_tier_index = 2
-		#set_state(brain_tier_index)
-	#elif (brain_power >= 30 && brain_power < 40):
-		#brain_tier_index = 3
-		#set_state(brain_tier_index)
-	#elif (brain_power >= 40 && brain_power < 50):
-		#brain_tier_index = 4
-		#set_state(brain_tier_index)
-	#elif (brain_power >= 50):
-		#brain_tier_index = 5
-		#set_state(brain_tier_index)
+	# animations
+	
+		# walking right, facing right
+	if (character_direction > Vector2(0, 0) && get_global_mouse_position() > global_position):
+		animated_sprite.play("walk")
+		
+		# walking left, facing right
+	elif (character_direction < Vector2(0, 0) && get_global_mouse_position() > global_position):
+		animated_sprite.play("backstep")
+		
+		# walking right, facing left
+	elif (character_direction > Vector2(0, 0) && get_global_mouse_position() < global_position):
+		animated_sprite.play("backstep")
+		
+		# walking left, facing left
+	elif (character_direction < Vector2(0, 0) && get_global_mouse_position() < global_position):
+		animated_sprite.play("walk")
+		
+	else:
+		animated_sprite.play("idle")
 	
 	move_and_slide()
 
