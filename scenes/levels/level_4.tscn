@@ -24,7 +24,7 @@ position = Vector2(134, 747)
 [node name="Spawners" type="Node" parent="."]
 
 [node name="BruteSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("7_hunlo")]
-spawn_points = [NodePath("SpawnPoint")]
+spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3")]
 eps = 0.2
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/BruteSpawner"]

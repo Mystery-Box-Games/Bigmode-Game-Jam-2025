@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://4eukwiw1y5q2" path="res://scenes/levels/level_8.tscn" id="9_2jaxp"]
 [ext_resource type="PackedScene" uid="uid://caj88gkky7m45" path="res://scenes/levels/level_9.tscn" id="10_xrdhs"]
 [ext_resource type="PackedScene" uid="uid://csev47ygq2xbg" path="res://scenes/levels/level_10.tscn" id="11_kt4gt"]
-[ext_resource type="PackedScene" path="res://scenes/background.tscn" id="16_81hbk"]
+[ext_resource type="PackedScene" uid="uid://d1bjxf6lvsaq7" path="res://scenes/background.tscn" id="16_81hbk"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
