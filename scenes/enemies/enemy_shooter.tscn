@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_7u4ix"]
 [ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="3_kugo2"]
 [ext_resource type="Texture2D" uid="uid://d0jqaghmgu3o4" path="res://assets/sprites/enemies/Shooter-Sheet.png" id="5_vct20"]
-[ext_resource type="PackedScene" path="res://scenes/weapons/enemy_shooter_gun.tscn" id="6_ocyja"]
+[ext_resource type="PackedScene" uid="uid://cr1glkol2hv8f" path="res://scenes/weapons/enemy_shooter_gun.tscn" id="6_ocyja"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aabvl"]
 radius = 13.0
