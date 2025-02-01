@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/enemies/enemy_brute.gd" id="1_i402s"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_8dhf7"]
 [ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="2_xohml"]
-[ext_resource type="PackedScene" uid="uid://dxs08tqnbk0s" path="res://scenes/shadow.tscn" id="4_8074a"]
+[ext_resource type="PackedScene" path="res://scenes/shadow.tscn" id="4_8074a"]
 [ext_resource type="Texture2D" uid="uid://bjqscped4uiqo" path="res://assets/sprites/enemies/Brute-Sheet.png" id="4_yoi71"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2y3hk"]

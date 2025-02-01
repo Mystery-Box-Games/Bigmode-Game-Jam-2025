@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1bjxf6lvsaq7"]
+[gd_scene load_steps=2 format=3 uid="uid://hpb0h815fjp0"]
 
 [ext_resource type="Texture2D" uid="uid://sw51bf8qyw2e" path="res://assets/sprites/background_temp.png" id="1_r4lin"]
 
 [node name="Background" type="Node2D"]
+z_index = -10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_r4lin")
