@@ -184,7 +184,7 @@ wait_time = 30.0
 one_shot = true
 
 [node name="MagnetPowerTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 15.0
 one_shot = true
 
 [node name="Magnetzone" type="Area2D" parent="."]

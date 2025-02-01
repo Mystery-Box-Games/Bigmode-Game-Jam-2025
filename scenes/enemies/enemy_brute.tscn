@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://eh8kttovjdj4"]
+[gd_scene load_steps=15 format=3 uid="uid://eh8kttovjdj4"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_brute.gd" id="1_i402s"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_8dhf7"]
 [ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="2_xohml"]
+[ext_resource type="PackedScene" uid="uid://daskbrkb48ed2" path="res://scenes/pickups/pickup_magnet.tscn" id="3_ekj87"]
 [ext_resource type="PackedScene" uid="uid://dxs08tqnbk0s" path="res://scenes/shadow.tscn" id="4_8074a"]
 [ext_resource type="Texture2D" uid="uid://bjqscped4uiqo" path="res://assets/sprites/enemies/Brute-Sheet.png" id="4_yoi71"]
 
@@ -98,6 +99,7 @@ _data = {
 motion_mode = 1
 script = ExtResource("1_i402s")
 brains = ExtResource("2_xohml")
+magnets = ExtResource("3_ekj87")
 brain_chance = 75
 attack_damage = 50.0
 aps = 0.5
