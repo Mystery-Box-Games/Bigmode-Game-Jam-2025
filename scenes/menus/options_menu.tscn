@@ -27,36 +27,20 @@ grow_horizontal = 2
 grow_vertical = 2
 current_tab = 0
 
-[node name="Display" type="VBoxContainer" parent="TabContainer"]
+[node name="Display" type="PanelContainer" parent="TabContainer"]
 layout_mode = 2
-alignment = 1
+theme = ExtResource("2_ieerh")
 metadata/_tab_index = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Display"]
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Display"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-alignment = 1
-
-[node name="Label" type="Label" parent="TabContainer/Display/HBoxContainer"]
-layout_mode = 2
-text = "Screen Resolution: "
-
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Display/HBoxContainer"]
-layout_mode = 2
-selected = 1
-item_count = 3
-popup/item_0/text = "1280x720"
-popup/item_1/text = "1920x1080"
-popup/item_1/id = 1
-popup/item_2/text = "2560x1440"
-popup/item_2/id = 2
-
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Display"]
-layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 20
 text = "Fullscreen"
 
-[node name="Audio" type="VBoxContainer" parent="TabContainer"]
+[node name="Audio" type="PanelContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
@@ -75,6 +59,5 @@ theme = ExtResource("2_ieerh")
 theme_type_variation = &"ButtonMain"
 text = "Back"
 
-[connection signal="item_selected" from="TabContainer/Display/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="toggled" from="TabContainer/Display/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
