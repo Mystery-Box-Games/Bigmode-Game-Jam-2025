@@ -1,25 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3vunhu6cgufg"]
+[gd_scene load_steps=3 format=3 uid="uid://d3vunhu6cgufg"]
 
 [ext_resource type="Script" path="res://scripts/levels.gd" id="1_xnbch"]
-[ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="2_d750a"]
-[ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="3_bmt04"]
-[ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="4_apluw"]
 [ext_resource type="PackedScene" uid="uid://gedicbr6flyf" path="res://scenes/enemies/brute_spawner.tscn" id="7_hunlo"]
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_xnbch")
 enemies_to_defeat = 10
-
-[node name="Pickups" type="Node" parent="."]
-
-[node name="PickupMachineGun" parent="Pickups" instance=ExtResource("2_d750a")]
-position = Vector2(-135, 746)
-
-[node name="PickupRifle" parent="Pickups" instance=ExtResource("3_bmt04")]
-position = Vector2(-2, 746)
-
-[node name="PickupShotgun" parent="Pickups" instance=ExtResource("4_apluw")]
-position = Vector2(134, 747)
 
 [node name="Spawners" type="Node" parent="."]
 

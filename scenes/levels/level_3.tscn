@@ -1,26 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cceiyl3y8etsm"]
+[gd_scene load_steps=4 format=3 uid="uid://cceiyl3y8etsm"]
 
 [ext_resource type="Script" path="res://scripts/levels.gd" id="1_mpmjw"]
-[ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="2_egk5a"]
-[ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="3_0l04c"]
-[ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="4_6j213"]
 [ext_resource type="PackedScene" uid="uid://1ymd5fq0pt10" path="res://scenes/enemies/runner_spawner.tscn" id="5_d2i80"]
 [ext_resource type="PackedScene" uid="uid://c3gh4ct35l1rn" path="res://scenes/enemies/shooter_spawner.tscn" id="6_wp7ay"]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_mpmjw")
 enemies_to_defeat = 20
-
-[node name="Pickups" type="Node" parent="."]
-
-[node name="PickupMachineGun" parent="Pickups" instance=ExtResource("2_egk5a")]
-position = Vector2(-135, 746)
-
-[node name="PickupRifle" parent="Pickups" instance=ExtResource("3_0l04c")]
-position = Vector2(-2, 746)
-
-[node name="PickupShotgun" parent="Pickups" instance=ExtResource("4_6j213")]
-position = Vector2(134, 747)
 
 [node name="Spawners" type="Node" parent="."]
 
