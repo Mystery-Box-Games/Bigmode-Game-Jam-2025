@@ -23,9 +23,13 @@ var brain_tier = {
 	5: Tiers.FIVE
 }
 
+#var magnet_power = false
+
 @onready var weapon_socket: Node2D = $WeaponSocket
 @onready var brain_power_timer: Timer = $BrainPowerTimer
+@onready var magnet_power_timer: Timer = $MagnetPowerTimer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var magnetzone: Area2D = $Magnetzone
 
 
 func _physics_process(delta: float) -> void:
@@ -133,3 +137,21 @@ func next_tier() -> void:
 	brain_tier_index += 1
 	brain_tier_index = clampi(brain_tier_index, 0, 5)
 	set_state(brain_tier[brain_tier_index])
+
+func activate_magnet():
+	magnetzone.monitoring = true
+	magnet_power_timer.start()
+	
+func _on_magnetzone_area_entered(area: Area2D) -> void:
+	var node = area.get_parent()
+	if node is Pickup && node.is_brain:
+		print("pickup brain")
+		node.move_towards_player = true
+
+func _on_magnetzone_area_exited(area: Area2D) -> void:
+	var node = area.get_parent()
+	if node is Pickup && node.is_brain:
+		node.move_towards_player = false
+
+func _on_magnet_power_timer_timeout() -> void:
+	magnetzone.monitoring = false

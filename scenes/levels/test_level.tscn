@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://iaf5xoaafcct"]
+
+[ext_resource type="Script" path="res://scripts/levels.gd" id="1_lg2ie"]
+[ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="2_uudc7"]
+[ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="3_52n2e"]
+[ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="4_jefo6"]
+[ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="5_0hst0"]
+[ext_resource type="PackedScene" uid="uid://daskbrkb48ed2" path="res://scenes/pickups/pickup_magnet.tscn" id="6_bebpv"]
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_lg2ie")
+enemies_to_defeat = 20
+
+[node name="Pickups" type="Node" parent="."]
+
+[node name="PickupMachineGun" parent="Pickups" instance=ExtResource("2_uudc7")]
+position = Vector2(-135, 746)
+
+[node name="PickupRifle" parent="Pickups" instance=ExtResource("3_52n2e")]
+position = Vector2(-2, 746)
+
+[node name="PickupShotgun" parent="Pickups" instance=ExtResource("4_jefo6")]
+position = Vector2(134, 747)
+
+[node name="PickupBrain" parent="Pickups" instance=ExtResource("5_0hst0")]
+position = Vector2(406, 354)
+
+[node name="PickupBrain2" parent="Pickups" instance=ExtResource("5_0hst0")]
+position = Vector2(190, -95)
+
+[node name="PickupBrain3" parent="Pickups" instance=ExtResource("5_0hst0")]
+position = Vector2(-242, -144)
+
+[node name="PickupBrain4" parent="Pickups" instance=ExtResource("5_0hst0")]
+position = Vector2(696, -161)
+
+[node name="PickupBrain5" parent="Pickups" instance=ExtResource("5_0hst0")]
+position = Vector2(1063, 352)
+
+[node name="PickupMagnet" parent="Pickups" instance=ExtResource("6_bebpv")]
+position = Vector2(-182, 316)
