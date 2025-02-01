@@ -98,7 +98,7 @@ _data = {
 motion_mode = 1
 script = ExtResource("1_oa4ih")
 brains = ExtResource("2_1aila")
-brain_chance = 40
+brain_chance = 30
 speed = 1.0
 min_distance = 2.0
 
