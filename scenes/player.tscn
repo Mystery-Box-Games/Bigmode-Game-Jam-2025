@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_6mx28"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_iy13f"]
 [ext_resource type="Texture2D" uid="uid://daowhypxr2rji" path="res://assets/sprites/player/Zombie-Sheet.png" id="3_h5e8i"]
-[ext_resource type="PackedScene" uid="uid://dxs08tqnbk0s" path="res://scenes/shadow.tscn" id="3_ovoiq"]
+[ext_resource type="PackedScene" path="res://scenes/shadow.tscn" id="3_ovoiq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k08l4"]
 atlas = ExtResource("3_h5e8i")
