@@ -14,6 +14,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	if (Globals.round > 1 && Globals.round % 5  == 0 && get_node("Pickups") != null):
+		var weapons = get_node("Pickups").get_children()
+		for weapon in weapons:
+			if (!weapon.visible):
+				weapon.visible = true
+	elif (Globals.round > 1 && Globals.round % 5  != 0 && get_node("Pickups") != null):
+		var weapons = get_node("Pickups").get_children()
+		for weapon in weapons:
+			if (weapon.visible):
+				weapon.visible = false
+	
 	if (Globals.enemies_defeated >= enemies_to_defeat && !round_over):
 		var spawners = get_node("Spawners").get_children()
 		for spawner in spawners:

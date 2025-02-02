@@ -36,3 +36,5 @@ spawn_points = [NodePath("SpawnPoint")]
 eps = 0.7
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/BruteSpawner"]
+
+[node name="Pickups" type="Node" parent="."]

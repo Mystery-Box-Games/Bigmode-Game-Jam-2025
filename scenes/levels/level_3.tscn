@@ -22,3 +22,5 @@ eps = 0.3
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/ShooterSpawner"]
 position = Vector2(900, -600)
+
+[node name="Pickups" type="Node" parent="."]

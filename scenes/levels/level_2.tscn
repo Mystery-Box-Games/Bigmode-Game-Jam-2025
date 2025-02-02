@@ -7,6 +7,8 @@
 script = ExtResource("1_nrfwp")
 enemies_to_defeat = 15
 
+[node name="Pickups" type="Node" parent="."]
+
 [node name="Spawners" type="Node" parent="."]
 
 [node name="ShooterSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("6_vif2o")]
