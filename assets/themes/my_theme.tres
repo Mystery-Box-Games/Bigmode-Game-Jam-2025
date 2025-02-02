@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://odxvlb3cuew4"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://odxvlb3cuew4"]
 
 [ext_resource type="StyleBox" uid="uid://2w57jgpvncme" path="res://assets/themes/panels/panel_container_main.tres" id="1_0ptyo"]
+[ext_resource type="StyleBox" uid="uid://d16eeppp0u304" path="res://assets/themes/progress_bars/background.tres" id="1_m254p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7jdg"]
 
@@ -49,6 +50,30 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfi28"]
+bg_color = Color(0.901961, 0.105882, 0.223529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh1vy"]
+bg_color = Color(0.895139, 0.85687, 0.668963, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [resource]
 ButtonMain/base_type = &"Button"
 ButtonMain/font_sizes/font_size = 24
@@ -56,8 +81,14 @@ ButtonMain/styles/focus = SubResource("StyleBoxEmpty_j7jdg")
 ButtonMain/styles/hover = SubResource("StyleBoxFlat_g0f3j")
 ButtonMain/styles/normal = SubResource("StyleBoxFlat_3n5tc")
 ButtonMain/styles/pressed = SubResource("StyleBoxFlat_3krxw")
+Healthbar/base_type = &"ProgressBar"
+Healthbar/styles/background = ExtResource("1_m254p")
+Healthbar/styles/fill = SubResource("StyleBoxFlat_qfi28")
 MenuTitle/base_type = &"Label"
 MenuTitle/font_sizes/font_size = 70
 PanelContainer/styles/panel = ExtResource("1_0ptyo")
+Resetbar/base_type = &"ProgressBar"
+Resetbar/styles/background = ExtResource("1_m254p")
+Resetbar/styles/fill = SubResource("StyleBoxFlat_lh1vy")
 SubTitle/base_type = &"Label"
 SubTitle/font_sizes/font_size = 40
