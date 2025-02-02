@@ -63,7 +63,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh1vy"]
-bg_color = Color(0.895139, 0.85687, 0.668963, 1)
+bg_color = Color(0.095467, 0.675421, 0.31977, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
