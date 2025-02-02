@@ -4,9 +4,9 @@ extends CanvasLayer
 @onready var player = get_tree().root.get_node("Game").get_node("Player")
 @onready var health_node = get_tree().root.get_node("Game").get_node("Player").get_node("Health")
 @onready var round_text: Label = $RoundText
-@onready var brain_text: Label = $VBoxContainer/BrainText
-@onready var brain_progress: TextureProgressBar = $VBoxContainer/HBoxContainer/BrainProgress
-@onready var reset_progress: ProgressBar = $VBoxContainer/HBoxContainer/ResetProgress
+@onready var brain_text: Label = $Control/BrainText
+@onready var brain_progress: TextureProgressBar = $Control/HBoxContainer/BrainProgress
+@onready var reset_progress: ProgressBar = $Control/HBoxContainer/ResetProgress
 @onready var score_text: Label = $ScoreText
 
 
@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	brain_progress.value = player.brain_power
 	if (brain_progress.value == brain_progress.max_value && player.brain_power <= 50):
 		player.next_tier()
-	brain_text.text = "Tier: %s" % player.brain_tier_index
+	brain_text.text = "%s" % player.brain_tier_index
 	
 	reset_progress.value = (player.get_node("BrainPowerTimer").get_time_left() / player.get_node("BrainPowerTimer").get_wait_time()) * 100
 	
