@@ -1,7 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://nn1pg4nm6ct0"]
+[gd_scene load_steps=13 format=3 uid="uid://nn1pg4nm6ct0"]
 
 [ext_resource type="Script" path="res://scripts/weapons/bullet.gd" id="1_o6ext"]
+[ext_resource type="Texture2D" uid="uid://5uug47spy01c" path="res://assets/sprites/Blood-Sheet.png" id="2_e7our"]
 [ext_resource type="Texture2D" uid="uid://bfqmay3i4gqkw" path="res://assets/sprites/weapons/Bullet-Sheet.png" id="2_eui1t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bg5h"]
+atlas = ExtResource("2_e7our")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1yi8"]
+atlas = ExtResource("2_e7our")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efbec"]
+atlas = ExtResource("2_e7our")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmgwj"]
+atlas = ExtResource("2_e7our")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yesy"]
 atlas = ExtResource("2_eui1t")
@@ -13,6 +30,23 @@ region = Rect2(18, 0, 18, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3co4f"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bg5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1yi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efbec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmgwj")
+}],
+"loop": false,
+"name": &"blood",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5yesy")
@@ -46,9 +80,9 @@ script = ExtResource("1_o6ext")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3co4f")
-animation = &"flash"
+animation = &"blood"
 autoplay = "flash"
-frame = 1
+frame = 3
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -68,5 +102,6 @@ collision_mask = 2
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7qgru")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

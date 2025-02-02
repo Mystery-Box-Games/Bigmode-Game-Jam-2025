@@ -1,7 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckl41jmn7e1nf"]
+[gd_scene load_steps=12 format=3 uid="uid://ckl41jmn7e1nf"]
 
 [ext_resource type="Script" path="res://scripts/weapons/bullet.gd" id="1_o5164"]
+[ext_resource type="Texture2D" uid="uid://5uug47spy01c" path="res://assets/sprites/Blood-Sheet.png" id="2_gdsj5"]
 [ext_resource type="Texture2D" uid="uid://bfqmay3i4gqkw" path="res://assets/sprites/weapons/Bullet-Sheet.png" id="2_jclca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckcv4"]
+atlas = ExtResource("2_gdsj5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r8vy"]
+atlas = ExtResource("2_gdsj5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i77u2"]
+atlas = ExtResource("2_gdsj5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aslvi"]
+atlas = ExtResource("2_gdsj5")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysuu7"]
 atlas = ExtResource("2_jclca")
@@ -13,6 +30,23 @@ region = Rect2(18, 0, 18, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gq4a5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckcv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r8vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i77u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aslvi")
+}],
+"loop": false,
+"name": &"blood",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ysuu7")
@@ -42,10 +76,8 @@ script = ExtResource("1_o5164")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gq4a5")
-animation = &"flash"
+animation = &"blood"
 autoplay = "flash"
-frame = 1
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
