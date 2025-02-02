@@ -23,7 +23,7 @@ var brain_tier = {
 	5: Tiers.FIVE
 }
 
-#var magnet_power = false
+var magnet_power = false
 
 @onready var weapon_socket: Node2D = $WeaponSocket
 @onready var brain_power_timer: Timer = $BrainPowerTimer
@@ -139,6 +139,7 @@ func next_tier() -> void:
 
 func activate_magnet():
 	magnetzone.monitoring = true
+	magnet_power = true
 	magnet_power_timer.start()
 	
 func _on_magnetzone_area_entered(area: Area2D) -> void:
@@ -153,3 +154,4 @@ func _on_magnetzone_area_exited(area: Area2D) -> void:
 
 func _on_magnet_power_timer_timeout() -> void:
 	magnetzone.monitoring = false
+	magnet_power = false

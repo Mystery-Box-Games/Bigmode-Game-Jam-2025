@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cegbgjac217ah"]
+[gd_scene load_steps=7 format=3 uid="uid://cegbgjac217ah"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_dw7dc"]
 [ext_resource type="Theme" uid="uid://odxvlb3cuew4" path="res://assets/themes/my_theme.tres" id="2_ujas6"]
 [ext_resource type="Texture2D" uid="uid://dvcg5nhbtxbns" path="res://assets/sprites/pickups/Brain-empty.png" id="3_gqbn7"]
 [ext_resource type="Texture2D" uid="uid://t0f2ccbjve0n" path="res://assets/sprites/pickups/Brain.png" id="4_v8s71"]
+[ext_resource type="Texture2D" uid="uid://dg6fg1ow8sltq" path="res://assets/sprites/pickups/Magnet-empty.png" id="5_hykbl"]
+[ext_resource type="Texture2D" uid="uid://dc4seamla57by" path="res://assets/sprites/pickups/Magnet.png" id="5_maamd"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_dw7dc")
@@ -96,3 +98,15 @@ theme = ExtResource("2_ujas6")
 theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
+
+[node name="MagnetProgress" type="TextureProgressBar" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 98.0
+offset_top = 60.0
+offset_right = 146.0
+offset_bottom = 108.0
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("5_hykbl")
+texture_progress = ExtResource("5_maamd")

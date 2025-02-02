@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var brain_progress: TextureProgressBar = $Control/HBoxContainer/BrainProgress
 @onready var reset_progress: ProgressBar = $Control/HBoxContainer/ResetProgress
 @onready var score_text: Label = $ScoreText
+@onready var magnet_progress: TextureProgressBar = $Control/MagnetProgress
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,3 +50,10 @@ func _process(delta: float) -> void:
 	
 	round_text.text = "Round %s" % (game.round + 1)
 	score_text.text = "Score: %s" % Globals.score
+	
+	if player.magnet_power && !magnet_progress.visible:
+		magnet_progress.visible = true
+	elif !player.magnet_power && magnet_progress.visible:
+		magnet_progress.visible = false
+		
+	magnet_progress.value = (player.get_node("MagnetPowerTimer").get_time_left() / player.get_node("MagnetPowerTimer").get_wait_time()) * 100
