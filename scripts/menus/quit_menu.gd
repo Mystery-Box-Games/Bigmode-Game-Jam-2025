@@ -3,7 +3,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CenterContainer/PanelContainer/VBoxContainer/ButtonResume.grab_focus()
+	#$CenterContainer/PanelContainer/VBoxContainer/ButtonResume.grab_focus()
+	pass
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

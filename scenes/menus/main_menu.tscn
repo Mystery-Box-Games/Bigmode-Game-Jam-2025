@@ -43,7 +43,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.233333, 0.633333, 1.1),
 "transitions": PackedFloat32Array(1, 0.225313, 1),
 "update": 0,
-"values": [Vector2(1715, 1197), Vector2(1715, 558), Vector2(1715, 748)]
+"values": [Vector2(1715, 1197), Vector2(1715, 558), Vector2(1715, 627)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -52,10 +52,10 @@ tracks/1/path = NodePath("Title:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.633333, 1.1),
+"transitions": PackedFloat32Array(1, 0.225313, 1),
 "update": 0,
-"values": [Vector2(-629, 89), Vector2(224, 89)]
+"values": [Vector2(-629, 89), Vector2(347, 89), Vector2(224, 89)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_giajq"]
@@ -75,9 +75,9 @@ script = ExtResource("1_5u2g6")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 224.0
+offset_left = 347.0
 offset_top = 89.0
-offset_right = 731.0
+offset_right = 854.0
 offset_bottom = 383.0
 theme = ExtResource("2_a638c")
 theme_type_variation = &"MenuTitle"
@@ -94,9 +94,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -205.0
-offset_top = -332.0
-offset_right = -58.0
-offset_bottom = -44.0
+offset_top = -522.0
+offset_right = -33.0
+offset_bottom = -106.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 40
@@ -105,6 +105,7 @@ alignment = 1
 [node name="ButtonStart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../ButtonQuit")
+theme = ExtResource("2_a638c")
 theme_type_variation = &"ButtonMain"
 text = "Start"
 

@@ -1,10 +1,61 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://odxvlb3cuew4"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://odxvlb3cuew4"]
 
 [ext_resource type="StyleBox" uid="uid://2w57jgpvncme" path="res://assets/themes/panels/panel_container_main.tres" id="1_0ptyo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7jdg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0f3j"]
+bg_color = Color(0.274072, 0.670461, 0.39311, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n5tc"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 20.0
+bg_color = Color(0.198612, 0.503211, 0.289711, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3krxw"]
+bg_color = Color(0.161033, 0.415593, 0.236952, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
 
 [resource]
 ButtonMain/base_type = &"Button"
 ButtonMain/font_sizes/font_size = 24
+ButtonMain/styles/focus = SubResource("StyleBoxEmpty_j7jdg")
+ButtonMain/styles/hover = SubResource("StyleBoxFlat_g0f3j")
+ButtonMain/styles/normal = SubResource("StyleBoxFlat_3n5tc")
+ButtonMain/styles/pressed = SubResource("StyleBoxFlat_3krxw")
 MenuTitle/base_type = &"Label"
 MenuTitle/font_sizes/font_size = 70
 PanelContainer/styles/panel = ExtResource("1_0ptyo")
