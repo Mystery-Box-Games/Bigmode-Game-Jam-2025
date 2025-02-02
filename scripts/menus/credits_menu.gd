@@ -27,7 +27,6 @@ var credits = [
 	],[
 		"Programming",
 		"Daniel McErlean",
-		"Robert Disbrow"
 	],[
 		"Art",
 		"Robert Disbrow"
@@ -39,9 +38,11 @@ var credits = [
 		"SFX Name"
 	],[
 		"Testers",
-		"Name 1",
-		"Name 2",
-		"Name 3"
+		"Casey O'Hagan",
+		"Julia Carty",
+		"Justin Neumann",
+		"Noah Taub",
+		"Tom Gaffey"
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
@@ -51,8 +52,8 @@ var credits = [
 		"https://myfavouriteartprogram.com"
 	],[
 		"Special thanks",
-		"My parents",
-		"My friends",
+		"Our parents",
+		"Our friends",
 		"Noah's pet rabbit"
 	]
 ]
