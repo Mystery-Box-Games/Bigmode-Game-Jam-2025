@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="2_1aila"]
 [ext_resource type="Texture2D" uid="uid://c1vfkn28uic8" path="res://assets/sprites/enemies/Runner-Sheet.png" id="2_skuu7"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_wivg0"]
-[ext_resource type="PackedScene" path="res://scenes/pickups/pickup_magnet.tscn" id="3_codds"]
-[ext_resource type="PackedScene" path="res://scenes/shadow.tscn" id="4_25lwp"]
+[ext_resource type="PackedScene" uid="uid://daskbrkb48ed2" path="res://scenes/pickups/pickup_magnet.tscn" id="3_codds"]
+[ext_resource type="PackedScene" uid="uid://dxs08tqnbk0s" path="res://scenes/shadow.tscn" id="4_25lwp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf0d1"]
 radius = 12.0
