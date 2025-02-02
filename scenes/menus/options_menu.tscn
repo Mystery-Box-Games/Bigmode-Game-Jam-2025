@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjwtcedkcvkkh"]
+[gd_scene load_steps=5 format=3 uid="uid://bjwtcedkcvkkh"]
 
 [ext_resource type="Script" path="res://scripts/menus/options_menu.gd" id="1_cakrj"]
 [ext_resource type="Theme" uid="uid://odxvlb3cuew4" path="res://assets/themes/my_theme.tres" id="2_ieerh"]
+[ext_resource type="Texture2D" uid="uid://dogjmnoanfhkx" path="res://assets/sprites/MainMenuBckGrnd-Sheet.png" id="2_lvpdh"]
+[ext_resource type="Texture2D" uid="uid://8jyuf1l0jypo" path="res://assets/sprites/MainMenuTitle.png" id="3_a507c"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +13,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cakrj")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_lvpdh")
+hframes = 2
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("3_a507c")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
