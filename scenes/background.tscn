@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://hpb0h815fjp0"]
+[gd_scene load_steps=3 format=3 uid="uid://hpb0h815fjp0"]
 
 [ext_resource type="Texture2D" uid="uid://sw51bf8qyw2e" path="res://assets/sprites/background_temp.png" id="1_r4lin"]
+[ext_resource type="TileSet" uid="uid://cdvjv4c4h740g" path="res://assets/tileset/background.tres" id="2_bdn7v"]
 
 [node name="Background" type="Node2D"]
 z_index = -10
@@ -12,3 +13,6 @@ texture = ExtResource("1_r4lin")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-1464, 684, -1501, 717, -1201, 884, -844, 1021, -395, 1110, -3, 1123, 387, 1099, 829, 1016, 1165, 894, 1460, 743, 1688, 557, 1854, 334, 1931, 164, 1964, 0, 1962, -215, 1876, -412, 1739, -597, 1582, -742, 1157, -997, 704, -1143, 321, -1199, 0, -1199, -410, -1175, -834, -1093, -1210, -966, -1537, -769, -1723, -619, -1866, -429, -1950, -226, -1972, 1, -1938, 201, -1843, 402, -1686, 575, -1501, 717, -1464, 684, -1640, 540, -1783, 376, -1880, 183, -1917, -1, -1897, -209, -1820, -402, -1678, -582, -1510, -733, -1191, -920, -822, -1054, -404, -1135, 1, -1158, 321, -1145, 689, -1087, 1134, -947, 1546, -706, 1703, -556, 1822, -390, 1899, -198, 1913, -1, 1885, 142, 1816, 318, 1651, 525, 1428, 707, 1146, 852, 812, 972, 380, 1057, 1, 1078, -396, 1054, -830, 968, -1174, 845)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_bdn7v")
