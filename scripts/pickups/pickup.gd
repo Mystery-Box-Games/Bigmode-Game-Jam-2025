@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 			var position = player.get_node("CollisionShape2D").global_position
 			var target_position = (position - global_position).normalized()
 			if (global_position.distance_to(position) > 1):
-				velocity += target_position * 20
+				velocity += target_position * 10
 				translate(velocity * delta)
 
 
