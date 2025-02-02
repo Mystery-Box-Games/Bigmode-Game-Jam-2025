@@ -31,14 +31,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		area.get_parent().get_node("Health").damage(damage)
 		
 		linear_velocity = Vector2.ZERO
-		scale = Vector2(5, 5)
+		animated_sprite.scale = Vector2(2, 2)
 		animated_sprite.play("blood")
 		
 	if area.get_parent() is Player && is_enemies:
 		area.get_parent().get_node("Health").damage(damage)
 		
 		linear_velocity = Vector2.ZERO
-		scale = Vector2(5, 5)
+		animated_sprite.scale = Vector2(2, 2)
 		animated_sprite.play("blood")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
