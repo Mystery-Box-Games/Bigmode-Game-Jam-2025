@@ -21,12 +21,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if move_towards_player:
-		print("moving towards player")
 		if (player != null):
 			var position = player.get_node("CollisionShape2D").global_position
 			var target_position = (position - global_position).normalized()
 			if (global_position.distance_to(position) > 1):
-				velocity += target_position * 10
+				velocity += target_position * 8
 				translate(velocity * delta)
 
 
@@ -41,7 +40,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.weapon_socket.add_child(weapon)
 			queue_free()
 		elif is_brain:
-			print("brains")
 			body.brain_power += 1
 			body.get_node("Health").health += 2
 			queue_free()

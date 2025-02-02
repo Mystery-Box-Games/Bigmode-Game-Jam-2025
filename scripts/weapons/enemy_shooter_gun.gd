@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 		flipped = false
 
 func attack():
-	print("Shooter is attacking")
 	var bullet: RigidBody2D = bullet_scn.instantiate()
 			
 	bullet.rotation = global_rotation

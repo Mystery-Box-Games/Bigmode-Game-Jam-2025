@@ -8,6 +8,7 @@ extends Node2D
 @export var bps: float = 5.0
 @export var bullet_damage: float = 30.0
 @export var is_shotgun: bool = false
+@export var is_rifle: bool = false
 
 var fire_rate: float
 var time_until_fire: float = 0.0
@@ -15,7 +16,6 @@ var flipped: bool = false
 
 @onready var player = get_tree().root.get_node("Game").get_node("Player")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var sprite: Sprite2D = $Sprite2D
 
 @onready var game = get_tree().root.get_node("Game")
 
@@ -93,6 +93,9 @@ func fire():
 		bullet.linear_velocity = bullet.transform.x * bullet_speed
 			
 		bullet.damage = bullet_damage * player.damage_multiplier
+		
+		if (is_rifle):
+			bullet.piercing = true
 			
 		game.add_child(bullet)
 		

@@ -40,7 +40,6 @@ func _physics_process(delta: float) -> void:
 		prev_brain_power = brain_power
 		brain_power_timer.start()
 	if (tier != Tiers.BASE && brain_power_timer.is_stopped()):
-		print("starting timer")
 		brain_power_timer.start()
 	
 	# get direction from keyboard
@@ -145,7 +144,6 @@ func activate_magnet():
 func _on_magnetzone_area_entered(area: Area2D) -> void:
 	var node = area.get_parent()
 	if node is Pickup && node.is_brain:
-		print("pickup brain")
 		node.move_towards_player = true
 
 func _on_magnetzone_area_exited(area: Area2D) -> void:
