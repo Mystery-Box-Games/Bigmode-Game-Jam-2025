@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://nn1pg4nm6ct0"]
+[gd_scene load_steps=14 format=3 uid="uid://nn1pg4nm6ct0"]
 
 [ext_resource type="Script" path="res://scripts/weapons/bullet.gd" id="1_o6ext"]
 [ext_resource type="Texture2D" uid="uid://5uug47spy01c" path="res://assets/sprites/Blood-Sheet.png" id="2_e7our"]
 [ext_resource type="Texture2D" uid="uid://bfqmay3i4gqkw" path="res://assets/sprites/weapons/Bullet-Sheet.png" id="2_eui1t"]
+[ext_resource type="PackedScene" uid="uid://cpe7a2vgl1pk7" path="res://scenes/weapons/blood_spatter.tscn" id="2_uhnmv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2bg5h"]
 atlas = ExtResource("2_e7our")
@@ -76,6 +77,7 @@ lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_o6ext")
+blood_spatter = ExtResource("2_uhnmv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

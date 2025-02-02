@@ -2,6 +2,7 @@ extends RigidBody2D
 
 const SPEED = 40
 
+@export var blood_spatter: PackedScene
 var is_enemies: bool = false
 var piercing: bool = false
 var damage
@@ -24,11 +25,6 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	queue_free()
 
-#func _on_body_entered(body: Node) -> void:
-	#if body is Enemy:
-		#body.get_node("Health").damage(damage)
-		#queue_free()
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Enemy && !is_enemies:
 		area.get_parent().get_node("Health").damage(damage)
@@ -36,13 +32,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if piercing:
 			if (pierced != 0):
 				pierced -= 1
-				
-				var bullet: RigidBody2D = duplicate()
-				get_tree().root.get_node("Game").add_child(bullet)
-				bullet.damage = damage
-				bullet.linear_velocity = Vector2.ZERO
-				bullet.animated_sprite.scale = Vector2(2, 2)
-				bullet.animated_sprite.play("blood")
+				var blood = blood_spatter.instantiate()
+				blood.global_position = global_position
+				get_tree().root.get_node("Game").add_child(blood)
 				return
 			piercing = false
 		

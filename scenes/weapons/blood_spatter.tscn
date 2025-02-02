@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpe7a2vgl1pk7"]
+
+[ext_resource type="Texture2D" uid="uid://5uug47spy01c" path="res://assets/sprites/Blood-Sheet.png" id="1_d2dq2"]
+[ext_resource type="Script" path="res://scripts/weapons/blood_spatter.gd" id="2_fjgwg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhnwt"]
+atlas = ExtResource("1_d2dq2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g34s"]
+atlas = ExtResource("1_d2dq2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf2ia"]
+atlas = ExtResource("1_d2dq2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw58l"]
+atlas = ExtResource("1_d2dq2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soy4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhnwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g34s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf2ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw58l")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="BloodSpatter" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_soy4l")
+autoplay = "default"
+script = ExtResource("2_fjgwg")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
