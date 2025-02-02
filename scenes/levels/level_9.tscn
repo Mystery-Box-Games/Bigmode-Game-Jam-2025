@@ -1,9 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://caj88gkky7m45"]
+[gd_scene load_steps=5 format=3 uid="uid://caj88gkky7m45"]
 
 [ext_resource type="Script" path="res://scripts/levels.gd" id="1_anlow"]
-[ext_resource type="PackedScene" uid="uid://ce4iem8eqbug" path="res://scenes/pickups/pickup_machine_gun.tscn" id="2_tt1n1"]
-[ext_resource type="PackedScene" uid="uid://vo7ovdvcox1m" path="res://scenes/pickups/pickup_rifle.tscn" id="3_1itmn"]
-[ext_resource type="PackedScene" uid="uid://4c2666r77n6l" path="res://scenes/pickups/pickup_shotgun.tscn" id="4_6ln8r"]
 [ext_resource type="PackedScene" uid="uid://1ymd5fq0pt10" path="res://scenes/enemies/runner_spawner.tscn" id="5_yi43b"]
 [ext_resource type="PackedScene" uid="uid://c3gh4ct35l1rn" path="res://scenes/enemies/shooter_spawner.tscn" id="6_yoq0m"]
 [ext_resource type="PackedScene" uid="uid://gedicbr6flyf" path="res://scenes/enemies/brute_spawner.tscn" id="7_jq46o"]
@@ -12,42 +9,30 @@
 script = ExtResource("1_anlow")
 enemies_to_defeat = 50
 
-[node name="Pickups" type="Node" parent="."]
-
-[node name="PickupMachineGun" parent="Pickups" instance=ExtResource("2_tt1n1")]
-position = Vector2(322, 117)
-
-[node name="PickupRifle" parent="Pickups" instance=ExtResource("3_1itmn")]
-position = Vector2(516, 159)
-
-[node name="PickupShotgun" parent="Pickups" instance=ExtResource("4_6ln8r")]
-position = Vector2(702, 117)
-
 [node name="Spawners" type="Node" parent="."]
 
 [node name="RunnerSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("5_yi43b")]
-visible = false
-spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
+spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint2")]
+eps = 1.7
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/RunnerSpawner"]
-visible = false
-position = Vector2(64, 67)
+position = Vector2(-900, 600)
+
+[node name="SpawnPoint2" type="Node2D" parent="Spawners/RunnerSpawner"]
+position = Vector2(900, -600)
 
 [node name="ShooterSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("6_yoq0m")]
-visible = false
-spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
+spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint2")]
+eps = 1.3
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/ShooterSpawner"]
-visible = false
-position = Vector2(932, 72)
+position = Vector2(-900, -600)
+
+[node name="SpawnPoint2" type="Node2D" parent="Spawners/ShooterSpawner"]
+position = Vector2(900, 600)
 
 [node name="BruteSpawner" parent="Spawners" node_paths=PackedStringArray("spawn_points") instance=ExtResource("7_jq46o")]
-visible = false
 spawn_points = [NodePath("SpawnPoint")]
-eps = 0.1
+eps = 0.8
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/BruteSpawner"]
-visible = false
-position = Vector2(515, 585)
