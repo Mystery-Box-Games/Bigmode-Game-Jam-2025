@@ -33,7 +33,7 @@ func move_character():
 		#look_at(player.global_position)
 	
 func dead():
-	Globals.score += score
+	Globals.score += score * (player.brain_tier_index + 1)
 	
 	var random = RandomNumberGenerator.new()
 	var number = random.randi_range(1, 100)
