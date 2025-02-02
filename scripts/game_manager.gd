@@ -55,4 +55,4 @@ func next_round():
 		get_parent().remove_child(current_level)
 		current_level = levels[levels.size() - 1].instantiate()
 		get_parent().add_child(current_level)
-	
+	Globals.round = round
