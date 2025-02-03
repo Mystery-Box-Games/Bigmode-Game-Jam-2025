@@ -8,6 +8,8 @@ extends Control
 @onready var music_bus := AudioServer.get_bus_index(music_bus_name)
 @onready var sfx_bus := AudioServer.get_bus_index(sfx_bus_name)
 
+@onready var check_button: CheckButton = $TabContainer/Display/CheckButton
+
 @onready var master_slider: HSlider = $TabContainer/Audio/VBoxContainer/MasterSlider
 @onready var music_slider: HSlider = $TabContainer/Audio/VBoxContainer/MusicSlider
 @onready var sfx_slider: HSlider = $TabContainer/Audio/VBoxContainer/SFXSlider
@@ -15,6 +17,9 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#$CenterContainer/PanelContainer/VBoxContainer/VolumeSlider.grab_focus()
+	if (DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN):
+		check_button.button_pressed = true
+	
 	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus))
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
