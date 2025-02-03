@@ -36,8 +36,13 @@ var credits = [
 	],[
 		"Sound Effects",
 		"Shotgun by marregheriti",
+		"https://freesound.org/people/Marregheriti/sounds/266105/",
+		"",
 		"gun I: SMG 1 by insaind",
-		"SniperShot by EMSiarma"
+		"https://freesound.org/people/insaind/sounds/558210/",
+		"",
+		"SniperShot by EMSiarma",
+		"https://freesound.org/people/EMSIarma/sounds/108852/",
 	],[
 		"Testers",
 		"Casey O'Hagan",
@@ -51,7 +56,6 @@ var credits = [
 		"https://godotengine.org/license",
 		"",
 		"Art created with Aseprite",
-		"https://myfavouriteartprogram.com"
 	],[
 		"Special thanks",
 		"Our parents",
