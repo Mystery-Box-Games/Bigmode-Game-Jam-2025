@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://odxvlb3cuew4"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://odxvlb3cuew4"]
 
 [ext_resource type="StyleBox" uid="uid://2w57jgpvncme" path="res://assets/themes/panels/panel_container_main.tres" id="1_0ptyo"]
 [ext_resource type="StyleBox" uid="uid://d16eeppp0u304" path="res://assets/themes/progress_bars/background.tres" id="1_m254p"]
@@ -50,6 +50,11 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 2
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7t5e3"]
+grow_begin = 30.0
+grow_end = 30.0
+thickness = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfi28"]
 bg_color = Color(0.901961, 0.105882, 0.223529, 1)
 border_width_left = 2
@@ -81,6 +86,8 @@ ButtonMain/styles/focus = SubResource("StyleBoxEmpty_j7jdg")
 ButtonMain/styles/hover = SubResource("StyleBoxFlat_g0f3j")
 ButtonMain/styles/normal = SubResource("StyleBoxFlat_3n5tc")
 ButtonMain/styles/pressed = SubResource("StyleBoxFlat_3krxw")
+HSeparator/constants/separation = 30
+HSeparator/styles/separator = SubResource("StyleBoxLine_7t5e3")
 Healthbar/base_type = &"ProgressBar"
 Healthbar/styles/background = ExtResource("1_m254p")
 Healthbar/styles/fill = SubResource("StyleBoxFlat_qfi28")

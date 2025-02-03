@@ -58,9 +58,10 @@ offset_right = 295.0
 offset_bottom = 370.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 
 [node name="Display" type="PanelContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_ieerh")
 metadata/_tab_index = 0
@@ -74,9 +75,50 @@ theme_override_font_sizes/font_size = 20
 text = "Fullscreen"
 
 [node name="Audio" type="PanelContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio"]
+layout_mode = 2
+
+[node name="MasterText" type="Label" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SubTitle"
+text = "Master"
+horizontal_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ieerh")
+
+[node name="MusicText" type="Label" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SubTitle"
+text = "Music"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ieerh")
+
+[node name="SFXText" type="Label" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SubTitle"
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ieerh")
 
 [node name="ButtonBack" type="Button" parent="."]
 layout_mode = 1
@@ -93,4 +135,10 @@ theme_type_variation = &"ButtonMain"
 text = "Back"
 
 [connection signal="toggled" from="TabContainer/Display/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="mouse_exited" from="TabContainer/Audio/VBoxContainer/MasterSlider" to="." method="_on_master_slider_mouse_exited"]
+[connection signal="value_changed" from="TabContainer/Audio/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="mouse_exited" from="TabContainer/Audio/VBoxContainer/MusicSlider" to="." method="_on_music_slider_mouse_exited"]
+[connection signal="value_changed" from="TabContainer/Audio/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="mouse_exited" from="TabContainer/Audio/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_mouse_exited"]
+[connection signal="value_changed" from="TabContainer/Audio/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
