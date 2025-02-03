@@ -32,7 +32,8 @@ var credits = [
 		"Robert Disbrow"
 	],[
 		"Music",
-		"Musician Name"
+		"Hurt Me Plenty by Beetlemuse",
+		"https://freesound.org/people/Beetlemuse/sounds/685533/"
 	],[
 		"Sound Effects",
 		"Shotgun by marregheriti",
