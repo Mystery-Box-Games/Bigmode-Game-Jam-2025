@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://p58y6o615yl7"]
+
+[ext_resource type="AudioStream" uid="uid://k6ml18xyfft1" path="res://assets/music/685533__beetlemuse__hurt-me-plenty.mp3" id="1_ag5xc"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ag5xc")
+autoplay = true
+bus = &"Music"
