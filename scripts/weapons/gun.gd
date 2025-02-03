@@ -16,6 +16,7 @@ var flipped: bool = false
 
 @onready var player = get_tree().root.get_node("Game").get_node("Player")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var fire_sound: AudioStreamPlayer2D = $FireSound
 
 @onready var game = get_tree().root.get_node("Game")
 
@@ -100,3 +101,12 @@ func fire():
 		game.add_child(bullet)
 		
 		time_until_fire = 0
+	#if (is_rifle || is_shotgun):
+		#fire_sound.play()
+	#else:
+		#if fire_sound.playing:
+			#return
+		#else:
+			#fire_sound.play()
+	fire_sound.pitch_scale = randf_range(1, 1.02)
+	fire_sound.play()

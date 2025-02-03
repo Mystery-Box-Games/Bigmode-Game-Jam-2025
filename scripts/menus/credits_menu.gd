@@ -35,7 +35,9 @@ var credits = [
 		"Musician Name"
 	],[
 		"Sound Effects",
-		"SFX Name"
+		"Shotgun by marregheriti",
+		"gun I: SMG 1 by insaind",
+		"SniperShot by EMSiarma"
 	],[
 		"Testers",
 		"Casey O'Hagan",

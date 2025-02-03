@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cguu1m7e8lbbj"]
+[gd_scene load_steps=7 format=3 uid="uid://cguu1m7e8lbbj"]
 
 [ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_vxxqu"]
 [ext_resource type="PackedScene" uid="uid://nn1pg4nm6ct0" path="res://scenes/weapons/bullet.tscn" id="2_hg618"]
 [ext_resource type="Texture2D" uid="uid://ckuxdn14ky7w1" path="res://assets/sprites/weapons/rifle/Rifle-Sheet.png" id="3_yaahm"]
+[ext_resource type="AudioStream" uid="uid://bq8e1d6xh1jgi" path="res://assets/sounds/rifle.wav" id="4_81yp5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s100y"]
 atlas = ExtResource("3_yaahm")
@@ -33,3 +34,7 @@ sprite_frames = SubResource("SpriteFrames_yhkg8")
 
 [node name="BulletPosition" type="Node2D" parent="."]
 position = Vector2(61, -7.75)
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_81yp5")
+bus = &"SFX"
