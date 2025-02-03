@@ -1,9 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqvg2u3s4wo1s"]
+[gd_scene load_steps=11 format=3 uid="uid://bqvg2u3s4wo1s"]
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_5u2g6"]
 [ext_resource type="Theme" uid="uid://odxvlb3cuew4" path="res://assets/themes/my_theme.tres" id="2_a638c"]
 [ext_resource type="Texture2D" uid="uid://dogjmnoanfhkx" path="res://assets/sprites/MainMenuBckGrnd-Sheet.png" id="2_labjd"]
 [ext_resource type="Texture2D" uid="uid://8jyuf1l0jypo" path="res://assets/sprites/MainMenuTitle.png" id="3_ny4rc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4yso"]
+atlas = ExtResource("2_labjd")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmh08"]
+atlas = ExtResource("2_labjd")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7go6l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4yso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmh08")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_rjkjx"]
 length = 0.001
@@ -63,10 +85,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5u2g6")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="AnimatedSprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_labjd")
-hframes = 2
+sprite_frames = SubResource("SpriteFrames_7go6l")
+autoplay = "default"
+frame = 1
+frame_progress = 0.349616
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(-973, 597)
