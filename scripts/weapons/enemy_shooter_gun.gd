@@ -8,6 +8,7 @@ var flipped: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var enemy_shooter: CharacterBody2D = $"../.."
+@onready var fire_sound: AudioStreamPlayer2D = $FireSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,3 +40,5 @@ func attack():
 	bullet.is_enemies = true
 			
 	get_tree().root.get_node("Game").add_child(bullet)
+	fire_sound.play()
+	
