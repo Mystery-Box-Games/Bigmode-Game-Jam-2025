@@ -21,3 +21,7 @@ func _on_button_credits_pressed() -> void:
 
 func _on_button_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_button_leaderboard_pressed() -> void:
+	get_tree().change_scene_to_packed(Globals.leaderboard_scene)

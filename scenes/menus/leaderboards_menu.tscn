@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1sqjdqpcwrig"]
+
+[ext_resource type="Script" path="res://scripts/menus/leaderboards_menu.gd" id="1_6dcp7"]
+[ext_resource type="Texture2D" uid="uid://dogjmnoanfhkx" path="res://assets/sprites/MainMenuBckGrnd-Sheet.png" id="1_hyw3d"]
+[ext_resource type="Texture2D" uid="uid://8jyuf1l0jypo" path="res://assets/sprites/MainMenuTitle.png" id="2_id545"]
+[ext_resource type="Theme" uid="uid://odxvlb3cuew4" path="res://assets/themes/my_theme.tres" id="3_f3esb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4yso"]
+atlas = ExtResource("1_hyw3d")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmh08"]
+atlas = ExtResource("1_hyw3d")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvgb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4yso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmh08")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LeaderboardsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6dcp7")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_gvgb8")
+autoplay = "default"
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_id545")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -468.0
+offset_top = -468.0
+offset_right = 468.0
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_f3esb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 220
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SubTitle"
+text = "Position"
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SubTitle"
+text = "Name"
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SubTitle"
+text = "Score"
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_f3esb")
+columns = 3
+
+[node name="ButtonBack" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -83.0
+offset_right = 180.0
+offset_bottom = -21.0
+grow_vertical = 0
+theme = ExtResource("3_f3esb")
+theme_type_variation = &"ButtonMain"
+text = "Back"
+
+[connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
