@@ -11,7 +11,7 @@ func _ready() -> void:
 	animation_player.play("walk")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	move_character()
 	
 	if (player.global_position.x > global_position.x && flipped):

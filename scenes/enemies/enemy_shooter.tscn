@@ -86,7 +86,7 @@ magnets = ExtResource("4_ftycp")
 brain_chance = 40
 attack_damage = 10.0
 aps = 1.0
-speed = 1.0
+speed = 3.5
 score = 20
 
 [node name="Health" type="Node2D" parent="."]

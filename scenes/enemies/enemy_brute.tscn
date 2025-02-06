@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/enemies/enemy_brute.gd" id="1_i402s"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_8dhf7"]
 [ext_resource type="PackedScene" uid="uid://bxiby6inqu25" path="res://scenes/pickups/pickup_brain.tscn" id="2_xohml"]
-[ext_resource type="PackedScene" path="res://scenes/pickups/pickup_magnet.tscn" id="3_ekj87"]
-[ext_resource type="PackedScene" path="res://scenes/shadow.tscn" id="4_8074a"]
+[ext_resource type="PackedScene" uid="uid://daskbrkb48ed2" path="res://scenes/pickups/pickup_magnet.tscn" id="3_ekj87"]
+[ext_resource type="PackedScene" uid="uid://dxs08tqnbk0s" path="res://scenes/shadow.tscn" id="4_8074a"]
 [ext_resource type="Texture2D" uid="uid://bjqscped4uiqo" path="res://assets/sprites/enemies/Brute-Sheet.png" id="4_yoi71"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2y3hk"]
@@ -103,7 +103,7 @@ magnets = ExtResource("3_ekj87")
 brain_chance = 75
 attack_damage = 50.0
 aps = 0.5
-speed = 0.5
+speed = 1.8
 min_distance = 5.0
 score = 50
 
