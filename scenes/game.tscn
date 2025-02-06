@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8wifcawcc8n4"]
+[gd_scene load_steps=18 format=3 uid="uid://c8wifcawcc8n4"]
 
 [ext_resource type="PackedScene" uid="uid://crk70wqlbm3xp" path="res://scenes/player.tscn" id="1_iu3ed"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wom1f"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://4eukwiw1y5q2" path="res://scenes/levels/level_8.tscn" id="9_2jaxp"]
 [ext_resource type="PackedScene" uid="uid://caj88gkky7m45" path="res://scenes/levels/level_9.tscn" id="10_xrdhs"]
 [ext_resource type="PackedScene" uid="uid://csev47ygq2xbg" path="res://scenes/levels/level_10.tscn" id="11_kt4gt"]
+[ext_resource type="PackedScene" uid="uid://b8lgvtiqb3d2x" path="res://scenes/round_swipe.tscn" id="12_02j4l"]
 [ext_resource type="PackedScene" uid="uid://hpb0h815fjp0" path="res://scenes/background.tscn" id="16_81hbk"]
 
 [node name="Game" type="Node2D"]
@@ -23,6 +24,7 @@ y_sort_enabled = true
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_wom1f")
 levels = Array[PackedScene]([ExtResource("6_40mgs"), ExtResource("3_cbfo6"), ExtResource("4_qvpxf"), ExtResource("5_lgqmm"), ExtResource("6_n6p82"), ExtResource("7_eua12"), ExtResource("8_d2sqm"), ExtResource("9_2jaxp"), ExtResource("10_xrdhs"), ExtResource("11_kt4gt")])
+round_swipe = ExtResource("12_02j4l")
 
 [node name="GameOverMenu" parent="." instance=ExtResource("2_vjw0p")]
 visible = false

@@ -5,6 +5,7 @@ var round_over = false
 var round = 0
 
 @export var levels: Array[PackedScene]
+@export var round_swipe: PackedScene
 var current_level: Node
 
 # Called when the node enters the scene tree for the first time.
@@ -56,3 +57,7 @@ func next_round():
 		current_level = levels[levels.size() - 1].instantiate()
 		get_parent().add_child(current_level)
 	Globals.round = round + 1
+	var swipe = round_swipe.instantiate()
+	get_parent().add_child(swipe)
+	
+	

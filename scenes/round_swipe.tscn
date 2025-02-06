@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8lgvtiqb3d2x"]
+
+[ext_resource type="Script" path="res://scripts/round_swipe.gd" id="1_5ntuq"]
+
+[sub_resource type="Animation" id="Animation_neclo"]
+resource_name = "swipe"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(-6, 1, 6, 1),
+"update": 0,
+"values": [Vector2(1984, 312), Vector2(821, 312), Vector2(821, 312), Vector2(-355, 312)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ln8ic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1984, 312)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q7fx6"]
+_data = {
+"RESET": SubResource("Animation_ln8ic"),
+"swipe": SubResource("Animation_neclo")
+}
+
+[node name="RoundSwipe" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1024.0
+offset_top = -228.0
+offset_right = 1302.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"MenuTitle"
+text = "Round 1"
+script = ExtResource("1_5ntuq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q7fx6")
+}
+autoplay = "swipe"
