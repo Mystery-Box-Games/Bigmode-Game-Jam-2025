@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 [gui]
 
 theme/custom="res://assets/themes/my_theme.tres"
+theme/custom_font="res://assets/fonts/Tiny5-Regular.ttf"
 
 [input]
 
