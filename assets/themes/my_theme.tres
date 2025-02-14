@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://odxvlb3cuew4"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://odxvlb3cuew4"]
 
 [ext_resource type="StyleBox" uid="uid://d16eeppp0u304" path="res://assets/themes/progress_bars/background.tres" id="1_m254p"]
 [ext_resource type="FontFile" uid="uid://bm3wnklq4en6d" path="res://assets/fonts/Tiny5-Regular.ttf" id="1_oibjx"]
@@ -71,6 +71,8 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p07ws"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh1vy"]
 bg_color = Color(0.095467, 0.675421, 0.31977, 1)
 border_width_left = 1
@@ -100,6 +102,8 @@ HSeparator/styles/separator = SubResource("StyleBoxLine_7t5e3")
 Healthbar/base_type = &"ProgressBar"
 Healthbar/styles/background = ExtResource("1_m254p")
 Healthbar/styles/fill = SubResource("StyleBoxFlat_qfi28")
+LineEdit/font_sizes/font_size = 35
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_p07ws")
 MenuTitle/base_type = &"Label"
 MenuTitle/font_sizes/font_size = 70
 MenuTitle/fonts/font = ExtResource("1_oibjx")

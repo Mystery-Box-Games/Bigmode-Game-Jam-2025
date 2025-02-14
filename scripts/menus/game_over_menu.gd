@@ -25,8 +25,11 @@ func _on_submit_button_pressed() -> void:
 	if name_field.text == null || name_field.text == "":
 		#name_field
 		return
+		
+	# disable name field and button
+	name_field.editable = false
+	submit_button.disabled = true
+	
 	Globals.player_name = name_field.text
 	var sw_result: Dictionary = await SilentWolf.Scores.save_score(Globals.player_name, Globals.score).sw_save_score_complete
 	print("Score persisted successfully: " + str(sw_result.score_id))
-	name_field.editable = false
-	submit_button.disabled = true

@@ -56,6 +56,7 @@ text = "Name:"
 [node name="NameField" type="LineEdit" parent="PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme = ExtResource("1_omteo")
 
 [node name="SubmitButton" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
