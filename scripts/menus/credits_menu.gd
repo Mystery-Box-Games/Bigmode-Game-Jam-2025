@@ -5,7 +5,7 @@ const line_time := 0.3
 const base_speed := 100
 const speed_up_multiplier := 10.0
 const title_color := Color.CADET_BLUE
-const title_size := 25
+const title_size := 30
 
 #var scroll_speed := base_speed
 var speed_up = false

@@ -3,12 +3,12 @@ extends CanvasLayer
 @onready var game = get_tree().root.get_node("Game").get_node("GameManager")
 @onready var player = get_tree().root.get_node("Game").get_node("Player")
 @onready var health_node = get_tree().root.get_node("Game").get_node("Player").get_node("Health")
-@onready var round_text: Label = $RoundText
-@onready var brain_text: Label = $Control/BrainText
-@onready var brain_progress: TextureProgressBar = $Control/HBoxContainer/BrainProgress
-@onready var reset_progress: ProgressBar = $Control/HBoxContainer/ResetProgress
-@onready var score_text: Label = $ScoreText
-@onready var magnet_progress: TextureProgressBar = $Control/MagnetProgress
+@onready var round_text: Label = %RoundText
+@onready var brain_text: Label = %BrainText
+@onready var brain_progress: TextureProgressBar = %BrainProgress
+@onready var reset_progress: ProgressBar = %ResetProgress
+@onready var score_text: Label = %ScoreText
+@onready var magnet_progress: TextureProgressBar = %MagnetProgress
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +19,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	health_node.health = clamp(health_node.health, 0, 100)
-	$ProgressBar.value = health_node.health
+	%Healthbar.value = health_node.health
 	
 	match player.brain_tier_index:
 		0:

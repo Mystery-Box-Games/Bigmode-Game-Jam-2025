@@ -35,7 +35,10 @@ position = Vector2(-242, -144)
 position = Vector2(696, -161)
 
 [node name="PickupBrain5" parent="Pickups" instance=ExtResource("5_0hst0")]
-position = Vector2(1063, 352)
+position = Vector2(-413, -876)
 
 [node name="PickupMagnet" parent="Pickups" instance=ExtResource("6_bebpv")]
 position = Vector2(-182, 316)
+
+[node name="PickupMagnet2" parent="Pickups" instance=ExtResource("6_bebpv")]
+position = Vector2(-17, -1094)
