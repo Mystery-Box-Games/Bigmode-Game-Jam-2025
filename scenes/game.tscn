@@ -48,4 +48,6 @@ position_smoothing_enabled = true
 
 [node name="Background" parent="." instance=ExtResource("16_81hbk")]
 
+[node name="Pickups" type="Node" parent="."]
+
 [connection signal="timeout" from="CooldownTimer" to="GameManager" method="_on_cooldown_timer_timeout"]

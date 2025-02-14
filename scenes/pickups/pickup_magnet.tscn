@@ -107,6 +107,7 @@ _data = {
 }
 
 [node name="PickupMagnet" type="Node2D"]
+z_index = -1
 script = ExtResource("1_yr1m3")
 is_magnet = true
 

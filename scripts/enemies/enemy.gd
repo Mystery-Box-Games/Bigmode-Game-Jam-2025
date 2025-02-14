@@ -41,9 +41,9 @@ func dead():
 	if (number <= brain_chance):
 		var brain = brains.instantiate()
 		brain.global_position = global_position
-		get_tree().root.get_node("Game").add_child.call_deferred(brain)
+		get_tree().root.get_node("Game").get_node("Pickups").add_child.call_deferred(brain)
 		
 	elif (number <= 100 && number >= 96 && !player.get_node("Magnetzone").monitoring):
 		var magnet = magnets.instantiate()
 		magnet.global_position = global_position
-		get_tree().root.get_node("Game").add_child.call_deferred(magnet)
+		get_tree().root.get_node("Game").get_node("Pickups").add_child.call_deferred(magnet)
