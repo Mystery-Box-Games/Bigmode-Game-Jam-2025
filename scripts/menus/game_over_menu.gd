@@ -1,9 +1,10 @@
 extends CanvasLayer
 
-@onready var round_text: Label = $PanelContainer/VBoxContainer/RoundText
-@onready var score_text: Label = $PanelContainer/VBoxContainer/ScoreText
-@onready var name_field: LineEdit = $PanelContainer/HBoxContainer/NameField
-@onready var submit_button: Button = $PanelContainer/HBoxContainer/SubmitButton
+@onready var round_text: Label = %RoundText
+@onready var score_text: Label = %ScoreText
+@onready var name_field: LineEdit = %NameField
+@onready var submit_button: Button = %SubmitButton
+@onready var submitted_text: Label = %SubmittedText
 
 func _process(delta: float) -> void:
 	round_text.text = "You reached round %s" % Globals.round
@@ -33,3 +34,5 @@ func _on_submit_button_pressed() -> void:
 	Globals.player_name = name_field.text
 	var sw_result: Dictionary = await SilentWolf.Scores.save_score(Globals.player_name, Globals.score).sw_save_score_complete
 	print("Score persisted successfully: " + str(sw_result.score_id))
+	submitted_text.visible = true
+	

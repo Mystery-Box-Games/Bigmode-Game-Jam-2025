@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://odxvlb3cuew4"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://odxvlb3cuew4"]
 
 [ext_resource type="StyleBox" uid="uid://d16eeppp0u304" path="res://assets/themes/progress_bars/background.tres" id="1_m254p"]
 [ext_resource type="FontFile" uid="uid://bm3wnklq4en6d" path="res://assets/fonts/Tiny5-Regular.ttf" id="1_oibjx"]
@@ -85,6 +85,8 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86ive"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awott"]
 
 [resource]
@@ -111,6 +113,8 @@ PanelContainer/styles/panel = ExtResource("3_amv5x")
 Resetbar/base_type = &"ProgressBar"
 Resetbar/styles/background = ExtResource("1_m254p")
 Resetbar/styles/fill = SubResource("StyleBoxFlat_lh1vy")
+Spacer/base_type = &"HSeparator"
+Spacer/styles/separator = SubResource("StyleBoxEmpty_86ive")
 SubTitle/base_type = &"Label"
 SubTitle/font_sizes/font_size = 40
 SubTitle/fonts/font = ExtResource("1_oibjx")
